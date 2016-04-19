@@ -1,18 +1,47 @@
+html {
+  font-size: 20px;
+}
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background: #eaeaea;
 }
-
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+a {
+    border-bottom: 2px solid #eaeaea;
+    text-decoration: none;
 }
-
-.theme-showcase > p > .btn {
-  margin: 5px 0;
+.siteHeader {
+    position: fixed;
+    margin: auto;
+    left: 0px;
+    bottom: auto;
+    right: auto;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    height: 70px;
+    z-index: 20;
 }
-
-.theme-showcase .navbar .container {
-  width: auto;
+.siteNavBG {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0FBE7C;
+    -webkit-transform: translateY(-62px);
+    -ms-transform: translateY(-62px);
+    transform: translateY(-62px);
+    font-size: 0.8rem;
+}
+.siteNav .navbar-right a {
+    color: #004F25;
+    border-color: transparent;
+    -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    margin-top: 1rem;
+}
+.siteNav .navbar-right a:hover {
+    opacity: 0.5;
+    border-color: rgba(15, 190, 124, 0.5);
 }
