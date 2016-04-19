@@ -41,7 +41,7 @@ $pageTitle = "$applicationName - Main";
 <?php include "header.php"; ?>
 
 <div class="container-fluid">
-
+    <div class=""><img src"" class"" alt="Home is where the heart is">
 </div>
 
 <!-- Load footer -->

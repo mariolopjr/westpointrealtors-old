@@ -2,8 +2,6 @@ html {
   font-size: 20px;
 }
 body {
-  padding-left: 5rem;
-  padding-right: 5rem;
   background: #eaeaea;
 }
 a {
@@ -18,7 +16,7 @@ a {
     right: auto;
     box-sizing: border-box;
     width: 100%;
-    background-color: #fff;
+    background-color: #FFF;
     height: 70px;
     z-index: 20;
 }
@@ -34,14 +32,25 @@ a {
     transform: translateY(-62px);
     font-size: 0.8rem;
 }
+.siteNav .navbar-right li {
+    padding-top: 1.75rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
 .siteNav .navbar-right a {
     color: #004F25;
     border-color: transparent;
+    border-bottom: 2px solid #FFF;
+    padding-bottom: 0.2rem;
     -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    margin-top: 1rem;
+    padding: 0rem;
+    margin: 0rem;
 }
 .siteNav .navbar-right a:hover {
     opacity: 0.5;
-    border-color: rgba(15, 190, 124, 0.5);
+    border-color: rgba(35, 189, 127, 0.5);
+    background-color: transparent;
+
 }
