@@ -38,10 +38,12 @@ $pageTitle = "$applicationName - Main";
 <body>
 
 <!-- Load header -->
-<?php include "header.php"; ?>
+<div class="container">
+    <?php include "header.php"; ?>
 
-<div class="container-fluid">
-    <div class=""><img src"" class"" alt="Home is where the heart is">
+    <div class="houseSearchBlock">
+        <img class="img-responsive houseSearchImg" src="http://placehold.it/1920x380.jpg" alt="Beautiful Homes">
+    </div>
 </div>
 
 <!-- Load footer -->
