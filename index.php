@@ -37,14 +37,25 @@ $pageTitle = "$applicationName - Main";
 </head>
 <body>
 
-<!-- Load header -->
+<!-- Main Container  -->
 <div class="container">
-    <?php include "header.php"; ?>
 
+    <!-- Site Header  -->
+    <?php include "header.php"; ?>
+    <!-- /Site Header -->
+
+    <!-- House Search Block  -->
     <div class="houseSearchBlock">
         <img class="img-responsive houseSearchImg" src="http://placehold.it/1920x380.jpg" alt="Beautiful Homes">
     </div>
+    <!-- /House Search Block -->
+
+    <!-- Favorite Listings  -->
+    <div class="favoriteListings">
+    </div>
+    <!-- /Favorite Listings -->
 </div>
+<!-- /Main Container -->
 
 <!-- Load footer -->
 <?php include "footer.php"; ?>
