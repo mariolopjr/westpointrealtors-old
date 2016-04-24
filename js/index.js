@@ -7,20 +7,19 @@
 var request;
 
 $(document).ready(function() {
-    var navBar = $(".siteHeader");
-    var navBarScrolledPixels = 50;
+    var toTopBtn = $(".toSiteTop");
+    var minScrolledPixelsForToTopBtn = 200;
 
     // Listen to scroll event
     $(window).scroll($.debounce(function () {
 
         var currentScrolledPixels = $(this).scrollTop();
-        console.log($(this).scrollTop());
 
-        if (currentScrolledPixels > navBarScrolledPixels) {
-            navBar.addClass("siteHeaderScrolled");
+        if (currentScrolledPixels > minScrolledPixelsForToTopBtn) {
+            toTopBtn.removeClass("hidden");
         }
         else {
-            navBar.removeClass("siteHeaderScrolled");
+            toTopBtn.addClass("hidden");
         }
-    }, 300));
+    }, 100));
 });

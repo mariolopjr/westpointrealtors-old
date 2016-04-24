@@ -18,14 +18,14 @@ $pageTitle = "$applicationName - Main";
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/theme.css">
 
+<!-- FontAwesome CSS 4.6.1 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
 <!-- Bootstrap Select CSS 1.10.0 -->
 <link rel="stylesheet" href="css/bootstrap-select.min.css">
 
 <!-- Bootstrap Date Time Picker CSS 4.17.37 -->
 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-
-<!-- Index CSS -->
-<link rel="stylesheet" href="css/index.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,19 +52,50 @@ $pageTitle = "$applicationName - Main";
 
     <!-- Favorite Listings  -->
     <div class="favoriteListings">
+        <div class="favoriteHomeContainer">
+            blah1
+        </div>
+        <div class="favoriteHomeContainer">
+            blah2
+        </div>
+        <div class="favoriteHomeContainer">
+            blah3
+        </div>
+        <div class="favoriteHomeContainer">
+            blah4
+        </div>
+        <div class="favoriteHomeContainer">
+            blah5
+        </div>
+        <div class="favoriteHomeContainer">
+            blah6
+        </div>
     </div>
     <!-- /Favorite Listings -->
+
+    <!-- Footer and Contact Block  -->
+    <div class="footerContactBlock">
+        <!-- Load footer -->
+        <?php include "footer.php"; ?>
+    </div>
+    <!-- /Footer and Contact Block -->
+
+    <!-- To Site Top  -->
+    <a href="#" class="toSiteTop hidden">
+        <i class="fa fa-angle-up toSiteTopHover" aria-hidden="true"></i>
+    </a>
+    <!-- /To Site Top -->
 </div>
 <!-- /Main Container -->
-
-<!-- Load footer -->
-<?php include "footer.php"; ?>
 
 <!-- jQuery JavaScript 1.12.0 -->
 <script src="js/jquery.min.js"></script>
 
 <!-- jQuery JSON JavaScript 2.5.1 -->
 <script src="js/jquery.json.min.js"></script>
+
+<!-- jQuery Debounce JavaScript 1.0.5 -->
+<script src="js/jquery.debounce.js"></script>
 
 <!-- Bootstrap JavaScript 3.3.6 -->
 <script src="js/bootstrap.min.js"></script>

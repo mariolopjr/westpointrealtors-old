@@ -27,30 +27,13 @@ $applicationVersion = techmunchies\functions\loadData ( TBL_SETTINGS, "applicati
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
                 <ul class="dropdown-menu">
-                    <li><a href="/settings.php">Settings</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="/logout.php">Logout</a></li>
+                    <ul class="list-inline">
+                        <li><a href="/settings.php">Settings</a></li>
+                        <li><a href="/logout.php">Logout</a></li>
+                    </ul>
                 </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
-<div id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="aboutModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 id="aboutModalTitle" class="modal-title">About</h4>
-            </div>
-            <div id="aboutModalContent" class="modal-body">
-                <p style="text-align: center;">Version: <?=$applicationVersion?></p>
-                <br />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
