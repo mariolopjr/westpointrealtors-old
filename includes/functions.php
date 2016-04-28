@@ -56,7 +56,7 @@ function loadDBH () {
     global $dbh;
 
     // Loads the database class file
-    require_once WEB_ROOT . "includes/classes/database.php";
+    require_once WEB_ROOT . "includes/classes/Database.php";
 
     // Checks to see if global $dbh is already set
     if ( isset ( $dbh ) ) {

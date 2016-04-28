@@ -37,17 +37,16 @@ $pageTitle = "$applicationName - Main";
 </head>
 <body>
 
-<!-- Main Container  -->
-<div class="container">
-
     <!-- Site Header  -->
     <?php include "header.php"; ?>
     <!-- /Site Header -->
 
+<!-- Main Container  -->
+<div class="container">
+
     <!-- House Search Block  -->
     <div class="houseSearchBlock">
-        <img class="img-responsive houseSearchImg" src="http://placehold.it/1920x380.jpg" alt="Beautiful Homes">
-    </div>
+        animatron + search goes here
     <!-- /House Search Block -->
 
     <!-- Favorite Listings  -->
