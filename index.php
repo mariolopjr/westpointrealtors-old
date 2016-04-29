@@ -37,12 +37,12 @@ $pageTitle = "$applicationName - Main";
 </head>
 <body>
 
-    <!-- Site Header  -->
-    <?php include "header.php"; ?>
-    <!-- /Site Header -->
-
 <!-- Main Container  -->
 <div class="container">
+	
+	<!-- Site Header  -->
+    <?php include "header.php"; ?>
+    <!-- /Site Header -->
 
     <!-- House Search Block  -->
     <div class="houseSearchBlock">

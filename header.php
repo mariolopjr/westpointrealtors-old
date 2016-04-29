@@ -1,6 +1,9 @@
 <?php
 $adminMenuItem = "";
-if ( isset ( $_SESSION [ "accessLevel" ] ) && $_SESSION [ "accessLevel" ] >= 2 ) {
+
+$adminLoggedIn = array_key_exists("accessLevel", $_SESSION) ? $_SESSION["accessLevel"] : "0";
+
+if ( $adminLoggedIn == 1 ) {
     $adminMenuItem =
         "                <li><a href=\"/administrator\">Administrator</a></li>\r\n";
 }
