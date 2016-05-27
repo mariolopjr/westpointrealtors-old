@@ -32,8 +32,8 @@ $pageTitle = "$applicationName - Main";
 
 <!-- Main Container  -->
 <div class="container">
-	
-	<!-- Site Header  -->
+
+    <!-- Site Header  -->
     <?php include "header.php"; ?>
     <!-- /Site Header -->
 
@@ -112,20 +112,9 @@ $pageTitle = "$applicationName - Main";
 </div>
 <!-- /Main Container -->
 
-<!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<!-- jQuery JSON -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-json/2.5.1/jquery.json.min.js"></script>
-
-<!-- jQuery Debounce JavaScript 1.0.5 -->
-<script src="js/jquery.debounce.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
-
-<!-- Index JS -->
-<script src="js/index.js"></script>
+<!-- Site JavaScripts  -->
+<?php include "includes/scripts.html"; ?>
+<!-- /Site JavaScripts -->
 
 </body>
 </html>
