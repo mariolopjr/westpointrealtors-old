@@ -13,25 +13,18 @@ $pageTitle = "$applicationName - Main";
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?=$pageTitle?></title>
 
-<!-- Bootstrap CSS 3.3.6 -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/theme.css">
 
-<!-- FontAwesome CSS 4.6.1 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-<!-- Bootstrap Select CSS 1.10.0 -->
-<link rel="stylesheet" href="css/bootstrap-select.min.css">
-
-<!-- Bootstrap Date Time Picker CSS 4.17.37 -->
-<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
-  <script src="js/html5shiv.min.js"></script>
-  <script src="js/respond.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
 </head>
@@ -119,29 +112,17 @@ $pageTitle = "$applicationName - Main";
 </div>
 <!-- /Main Container -->
 
-<!-- jQuery JavaScript 1.12.0 -->
-<script src="js/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-<!-- jQuery JSON JavaScript 2.5.1 -->
-<script src="js/jquery.json.min.js"></script>
+<!-- jQuery JSON -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-json/2.5.1/jquery.json.min.js"></script>
 
 <!-- jQuery Debounce JavaScript 1.0.5 -->
 <script src="js/jquery.debounce.js"></script>
 
-<!-- Bootstrap JavaScript 3.3.6 -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Bootstrap Select JavaScript 1.10.0 -->
-<script src="js/bootstrap-select.min.js"></script>
-
-<!-- Bootstrap Date Time Picker JavaScript 2.12.0 -->
-<script src="js/moment.min.js"></script>
-
-<!-- Bootstrap Date Time Picker JavaScript 4.17.37 -->
-<script src="js/bootstrap-datetimepicker.min.js"></script>
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="js/ie10-viewport-bug-workaround.js"></script>
+<!-- Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
 
 <!-- Index JS -->
 <script src="js/index.js"></script>
