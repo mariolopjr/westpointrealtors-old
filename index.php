@@ -50,24 +50,56 @@ $pageTitle = "$applicationName - Main";
     <!-- /House Search Block -->
 
     <!-- Favorite Listings  -->
-    <div class="favoriteListings">
-        <div class="favoriteHomeContainer">
-            blah1
-        </div>
-        <div class="favoriteHomeContainer">
-            blah2
-        </div>
-        <div class="favoriteHomeContainer">
-            blah3
-        </div>
-        <div class="favoriteHomeContainer">
-            blah4
-        </div>
-        <div class="favoriteHomeContainer">
-            blah5
-        </div>
-        <div class="favoriteHomeContainer">
-            blah6
+    <div class="favoriteListings album text-muted">
+        <div class="row">
+            <div class="favoriteHomeContainer card">
+                <img src="http://placehold.it/350x300" style="height: 300px; width: 100%; display: block;" alt="Beautiful Home 1" />
+                <p class="home-card-text">
+                    Beautiful home 1.......<br />
+                    12345 NW 3rd St, Orlando, FL 32816<br />
+                    $150,000<br />
+                </p>
+            </div>
+            <div class="favoriteHomeContainer card">
+                <img src="http://placehold.it/350x300" style="height: 300px; width: 100%; display: block;" alt="Beautiful Home 2" />
+                <p class="home-card-text">
+                    Beautiful home 2.......<br />
+                    12345 NW 3rd St, Orlando, FL 32816<br />
+                    $150,000<br />
+                </p>
+            </div>
+            <div class="favoriteHomeContainer card">
+                <img src="http://placehold.it/350x300" style="height: 300px; width: 100%; display: block;" alt="Beautiful Home 3" />
+                <p class="home-card-text">
+                    Beautiful home 3.......<br />
+                    12345 NW 3rd St, Orlando, FL 32816<br />
+                    $150,000<br />
+                </p>
+            </div>
+            <div class="favoriteHomeContainer card">
+                <img src="http://placehold.it/350x300" style="height: 300px; width: 100%; display: block;" alt="Beautiful Home 4" />
+                <p class="home-card-text">
+                    Beautiful home 4.......<br />
+                    12345 NW 3rd St, Orlando, FL 32816<br />
+                    $150,000<br />
+                </p>
+            </div>
+            <div class="favoriteHomeContainer card">
+                <img src="http://placehold.it/350x300" style="height: 300px; width: 100%; display: block;" alt="Beautiful Home 5" />
+                <p class="home-card-text">
+                    Beautiful home 5.......<br />
+                    12345 NW 3rd St, Orlando, FL 32816<br />
+                    $150,000<br />
+                </p>
+            </div>
+            <div class="favoriteHomeContainer card">
+                <img src="http://placehold.it/350x300" style="height: 300px; width: 100%; display: block;" alt="Beautiful Home 6" />
+                <p class="home-card-text">
+                    Beautiful home 6.......<br />
+                    12345 NW 3rd St, Orlando, FL 32816<br />
+                    $150,000<br />
+                </p>
+            </div>
         </div>
     </div>
     <!-- /Favorite Listings -->
