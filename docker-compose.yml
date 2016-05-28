@@ -1,0 +1,24 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:1.11.0-alpine
+    ports:
+      - "4000:80"
+    depends_on:
+      - php
+    volumes:
+      - .:/usr/share/nginx/html
+    command: /bin/sh -c "envsubst < /usr/share/nginx/html/config/nginx/default.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    #command: /bin/sh -c "nginx -g 'daemon off;'"
+  php:
+    image: php:7.0.6-fpm-alpine
+    depends_on:
+      - sql
+    volumes:
+      - .:/var/www/html
+  sql:
+    image: mysql:5.7.12
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/var/lib/mysql
