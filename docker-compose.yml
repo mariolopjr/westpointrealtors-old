@@ -17,6 +17,14 @@ services:
       - .:/var/www/html
       - ./config/php/php.ini:/usr/local/etc/php/php.ini
       - ./config/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    environment:
+      MYSQL_TYPE: MYSQL
+      MYSQL_DB_NAME: westpointrealtors
+      MYSQL_DB_USERNAME: root
+      MYSQL_DB_PASSWORD: root
+      MYSQL_DB_HOSTNAME: sql
+      MYSQL_DB_PORT: 3306
+      MYSQL_DB_CHARSET: UTF8
     command: /bin/sh -c "docker-php-ext-install pdo_mysql && php-fpm"
   sql:
     image: mysql:5.7.12

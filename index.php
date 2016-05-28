@@ -29,7 +29,6 @@ $pageTitle = "$applicationName - Main";
 
 </head>
 <body>
-
 <!-- Main Container  -->
 <div class="container">
 

@@ -11,25 +11,25 @@ define ( "DEBUG_SET", "TRUE" );
  * SQL Database Type
  * Available Types: MySQL, MSSQL
  */
-define ( "DB_TYPE", "MYSQL" );
+define ( "DB_TYPE", $_SERVER [ 'MYSQL_TYPE' ] );
 
 // SQL database name
-define ( "DB_NAME", "westpointrealtors" );
+define ( "DB_NAME", $_SERVER [ 'MYSQL_DB_NAME' ] );
 
 // SQL database username
-define ( "DB_USERNAME", "root" );
+define ( "DB_USERNAME", $_SERVER [ 'MYSQL_DB_USERNAME' ] );
 
 // SQL database password
-define ( "DB_PASSWORD", 'root' );
+define ( "DB_PASSWORD", $_SERVER [ 'MYSQL_DB_PASSWORD' ] );
 
 // SQL hostname
-define ( "DB_HOSTNAME", "localhost" );
+define ( "DB_HOSTNAME", $_SERVER [ 'MYSQL_DB_HOSTNAME' ] );
 
 // SQL port
-define ( "DB_PORT", "3306" );
+define ( "DB_PORT", $_SERVER [ 'MYSQL_DB_PORT' ] );
 
 // SQL charset
-define ( "DB_CHARSET", "UTF8" );
+define ( "DB_CHARSET", $_SERVER [ 'MYSQL_DB_CHARSET' ] );
 
 // SQL collate
 define ( "DB_COLLATE", "" );
