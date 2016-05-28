@@ -3,21 +3,25 @@ services:
   nginx:
     image: nginx:1.11.0-alpine
     ports:
-      - "4000:80"
+      - "8080:80"
     depends_on:
       - php
     volumes:
       - .:/usr/share/nginx/html
-    command: /bin/sh -c "envsubst < /usr/share/nginx/html/config/nginx/default.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
-    #command: /bin/sh -c "nginx -g 'daemon off;'"
+      - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
   php:
     image: php:7.0.6-fpm-alpine
     depends_on:
       - sql
     volumes:
       - .:/var/www/html
+      - ./config/php/php.ini:/usr/local/etc/php/php.ini
+      - ./config/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    command: /bin/sh -c "docker-php-ext-install pdo_mysql && php-fpm"
   sql:
     image: mysql:5.7.12
+    ports:
+      - "8306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
