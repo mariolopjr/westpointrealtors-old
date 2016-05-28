@@ -10,8 +10,8 @@ if ( $adminLoggedIn == 1 ) {
 $applicationVersion = techmunchies\functions\loadData ( TBL_SETTINGS, "applicationVersion" );
 ?>
 
-<nav class="siteHeader">
-    <div class="siteNavBG" style="transform: matrix(1, 0, 0, 1, 0, -62);"></div>
+<nav class="navbar navbar-full navbar-fixed-top">
+    <div style="transform: matrix(1, 0, 0, 1, 0, -62);"></div>
     <div class="siteNav">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">

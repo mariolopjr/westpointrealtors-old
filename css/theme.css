@@ -15,19 +15,12 @@ a {
     border-bottom: 2px solid #EAEAEA;
     text-decoration: none;
 }
-.siteHeader {
-    position: fixed;
-    margin: auto;
-    left: 0px;
-    bottom: auto;
-    right: auto;
-    box-sizing: border-box;
-    width: 100%;
+.navbar {
     background-color: rgba(255, 255, 255, 0.5);
     height: 3.5rem;
     z-index: 20;
 }
-.siteHeader:after {
+.navbar:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -41,10 +34,10 @@ a {
     transition: transform 0.3s;
 }
 
-.siteHeader:hover::after {
+.navbar:hover::after {
     transform: scaleY(1);
 }
-.siteNavBG {
+.navbar div:first-child {
     position: fixed;
     z-index: 10;
     left: 0;
@@ -56,13 +49,13 @@ a {
     transform: translateY(-62px);
     font-size: 0.8rem;
 }
-.siteNav .navbar-right li {
+.navbar .navbar-right li {
     padding-top: 1.75rem;
     padding-bottom: 1rem;
     padding-left: 0.6rem;
     padding-right: 0.6rem;
 }
-.siteNav .navbar-right a {
+.navbar .navbar-right a {
     color: #004F25;
     border-color: transparent;
     padding-bottom: 0.2rem;
@@ -71,9 +64,9 @@ a {
     padding: 0rem;
     margin: 0rem;
 }
-.siteNav .navbar-right a:hover,
-.siteNav .navbar-right a:active,
-.siteNav .navbar-right a:focus {
+.navbar .navbar-right a:hover,
+.navbar .navbar-right a:active,
+.navbar .navbar-right a:focus {
     color: #004F25;
     opacity: 0.5;
     border-color: rgba(0, 79, 37, 0.5);
@@ -99,22 +92,22 @@ a {
     height: 2rem;
     background: rgba(0, 0, 0, 0.8);
 }
-.siteNav .dropdown-menu li {
+.navbar .dropdown-menu li {
     padding-top: 0.25rem;
     padding-bottom: 0;
     padding-left: 0.5rem;
     top: 0;
     font-weight: bold;
 }
-.siteNav .dropdown-menu li:first-child {
+.navbar .dropdown-menu li:first-child {
     padding-left: 1rem;
 }
-.siteNav .dropdown-menu li > a {
+.navbar .dropdown-menu li > a {
     color: #FFF;
     border-bottom: none;
     text-decoration: none;
 }
-.siteNav .dropdown-menu li > a:hover {
+.navbar .dropdown-menu li > a:hover {
     color: #0FBE7C;
     background-color: transparent;
 }
