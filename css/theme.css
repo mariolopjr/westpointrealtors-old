@@ -10,15 +10,24 @@ html {
 }
 body {
   background: #EAEAEA;
+  text-align: center;
 }
 a {
     border-bottom: 2px solid #EAEAEA;
     text-decoration: none;
 }
+.container {
+    text-align: left;
+}
+.container-center {
+    margin: 0 auto;
+}
 .navbar {
     background-color: rgba(255, 255, 255, 0.5);
     height: 3.5rem;
     z-index: 20;
+    width: 100%;
+    text-align: left;
 }
 .navbar:after {
     content: "";
@@ -26,7 +35,7 @@ a {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: inherit;
     transform: scaleY(0);
     transform-origin: top center;
     background-color: #0FBE7C;
@@ -41,13 +50,13 @@ a {
     position: fixed;
     z-index: 10;
     left: 0;
+    top: 0;
     width: 100%;
     height: 3.5rem;
     background-color: #0FBE7C;
     -webkit-transform: translateY(-62px);
     -ms-transform: translateY(-62px);
     transform: translateY(-62px);
-    font-size: 0.8rem;
 }
 .navbar .navbar-right li {
     padding-top: 1.75rem;
