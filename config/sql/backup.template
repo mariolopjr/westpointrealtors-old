@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mysqldump --force --opt --user=${MYSQL_DB_USERNAME} --password=${MYSQL_ROOT_PASSWORD} --databases ${MYSQL_DB_NAME} > /tmp/`date +%Y%m%d`.sql
+
+gzip -9 -f /tmp/`date +%Y%m%d`.sql
+
+mv /tmp/`date +%Y%m%d`.sql.gz ${MYSQL_DB_BACKUP_FILE_PATH}/backup.sql.gz
