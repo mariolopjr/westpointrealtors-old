@@ -13,12 +13,6 @@ $applicationVersion = techmunchies\functions\loadData ( TBL_SETTINGS, "applicati
 <nav class="navbar navbar-full navbar-fixed-top">
     <div style="transform: matrix(1, 0, 0, 1, 0, -62);"></div>
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
         <a class="navbar-brand" href="/"><?=$applicationName?></a>
     </div>
     <div class="navbar-collapse collapse">
