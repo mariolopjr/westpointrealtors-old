@@ -1,0 +1,31 @@
+/* Site Theme CSS Styling
+ *
+ * Author: Mario Lopez
+ *
+ */
+.jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-bottom: 0;
+    background-color: #fff;
+}
+.album {
+    min-height: 50rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    background-color: #f7f7f7;
+}
+.album .row {
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+.card {
+    float: left;
+    width: 33.333%;
+    padding: .75rem;
+    margin-bottom: 1rem;
+    border: 0;
+}
+.card > img {
+    margin-bottom: .75rem;
+}

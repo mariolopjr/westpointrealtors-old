@@ -13,5 +13,8 @@
 <!-- Bootstrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
 
+<!-- Holder -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.3/holder.min.js"></script>
+
 <!-- Index JS -->
 <script src="js/index.js"></script>
