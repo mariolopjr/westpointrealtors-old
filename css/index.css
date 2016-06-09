@@ -42,6 +42,9 @@
   top: 3rem;
   position: relative;
 }
+.to-top:hover {
+  background-color: #0FBE7C;
+}
 .footer {
     margin-top: 3rem;
     padding: 2.5rem 0;

@@ -4,9 +4,6 @@
 <!-- jQuery JSON -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-json/2.5.1/jquery.json.min.js"></script>
 
-<!-- jQuery Debounce JavaScript 1.0.5 -->
-<script src="js/jquery.debounce.js"></script>
-
 <!-- Tether -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
 
