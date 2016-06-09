@@ -23,19 +23,6 @@ $applicationVersion = techmunchies\functions\loadData ( TBL_SETTINGS, "applicati
             <li class="nav-item">
                 <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <?=$adminMenuItem?>
-            <li class="nav-item">
-                <a class="nav-link" href="" data-toggle="modal" data-target="#aboutModal">About</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dLabel">
-                    <a class="dropdown-item" href="/settings.php">Settings</a>
-                    <a class="dropdown-item" href="/logout.php">Logout</a>
-                </div>
-            </li>
             <form class="form-inline pull-xs-right">
               <input class="form-control" type="text" placeholder="Search Address">
               <button class="btn btn-success-outline" type="submit">Search</button>

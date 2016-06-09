@@ -29,3 +29,24 @@
 .card > img {
     margin-bottom: .75rem;
 }
+.to-top {
+  background-color: #004F25;
+  border-radius: 4px 4px 0 0;
+  color: #FFFFFF;
+  width: 3.6rem;
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out 0s;
+  top: 3rem;
+  position: relative;
+}
+.footer {
+    margin-top: 3rem;
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+}

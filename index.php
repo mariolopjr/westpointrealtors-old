@@ -20,22 +20,19 @@ $pageTitle = "$applicationName - Main";
 </head>
 <body>
 
-<div class="container container-center">
-
 <!-- Site Header  -->
 <?php include "header.php"; ?>
 <!-- /Site Header -->
 
+<div class="container">
 <section class="jumbotron text-xs-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">West Point Real Estate Nice SVG Path Drawing</h1>
-        <p class="lead text-muted">
-            There will be something very cool here!!!
-        </p>
-        <br />
-        <br />
-        <br />
-    </div>
+    <h1 class="jumbotron-heading">West Point Real Estate Nice SVG Path Drawing</h1>
+    <p class="lead text-muted">
+        There will be something very cool here!!!
+    </p>
+    <br />
+    <br />
+    <br />
 </section>
 
 <!-- Favorite Listings  -->
@@ -93,20 +90,18 @@ $pageTitle = "$applicationName - Main";
 </div>
 <!-- /Favorite Listings -->
 
+<a href="#" class="center-block to-top">
+    <i class="fa fa-angle-double-up to-top-hover" aria-hidden="true"></i>
+</a>
+
 </div>
 
-<!-- Footer and Contact Block  -->
+<!-- Footer  -->
 <div class="footerContactBlock">
     <!-- Load footer -->
     <?php include "footer.php"; ?>
 </div>
-<!-- /Footer and Contact Block -->
-
-<!-- To Site Top  -->
-<a href="#" class="toSiteTop hidden">
-    <i class="fa fa-angle-up toSiteTopHover" aria-hidden="true"></i>
-</a>
-<!-- /To Site Top -->
+<!-- /Footer -->
 
 <!-- Site JavaScript  -->
 <?php require_once WEB_ROOT . "includes/js.php"; ?>
