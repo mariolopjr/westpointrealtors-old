@@ -11,7 +11,7 @@
 }
 .album {
     min-height: 50rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: #f7f7f7;
 }
@@ -25,9 +25,51 @@
     padding: .75rem;
     margin-bottom: 1rem;
     border: 0;
+    max-height: 305px;
+    border-radius: 0;
 }
 .card > img {
     margin-bottom: .75rem;
+    height: 280px;
+    width: 100%;
+    display: block;
+}
+.house-price {
+    top: -80px;
+    left: 10px;
+    font-size: 1.8rem;
+    position: relative;
+    color: #fff;
+    z-index: 1000;
+}
+.house-address {
+    top: -85px;
+    left: 10px;
+    font-size: 1rem;
+    position: relative;
+    color: #fff;
+    z-index: 1000;
+}
+.house-info {
+    top: -137px;
+    left: 150px;
+    font-size: 1rem;
+    position: relative;
+    color: #fff;
+    z-index: 1000;
+}
+.popover-card {
+    width: 33.333%;
+    max-width: 354px;
+}
+.popover-image-small {
+    margin-top: 1rem;
+    height: 48px;
+    width: 20%;
+    display: block;
+}
+.fa-small {
+    font-size: 0.5rem;
 }
 .to-top {
   background-color: #004F25;
