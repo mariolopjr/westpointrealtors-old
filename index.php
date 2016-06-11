@@ -38,8 +38,8 @@ $pageTitle = "$applicationName - Main";
 <!-- Favorite Listings  -->
 <div class="album text-muted">
     <div class="row">
-        <a href="#">
-            <div id="house1" class="card" data-toggle="popover">
+        <div id="house1" class="card" data-toggle="popover">
+            <a href="#">
                 <img data-src="holder.js/100px280?text=House 1" alt="Beautiful Home" data-holder-rendered="true">
                 <p>
                     <div class="house-price">
@@ -52,8 +52,16 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
+            </a>
+            <hr>
+            <div class="small-img-row text-xs-center">
+                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
             </div>
-        </a>
+        </div>
         <a href="#">
             <div id="house2" class="card" data-toggle="popover">
                 <img data-src="holder.js/100px280?text=House 2" alt="Beautiful Home" data-holder-rendered="true">
@@ -68,6 +76,14 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
+                <hr>
+                <div class="small-img-row text-xs-center">
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                </div>
             </div>
         </a>
         <a href="#">
@@ -84,6 +100,14 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
+                <hr>
+                <div class="small-img-row text-xs-center">
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                </div>
             </div>
         </a>
         <a href="#">
@@ -100,6 +124,14 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
+                <hr>
+                <div class="small-img-row text-xs-center">
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                </div>
             </div>
         </a>
         <a href="#">
@@ -116,6 +148,14 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
+                <hr>
+                <div class="small-img-row text-xs-center">
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                </div>
             </div>
         </a>
         <a href="#">
@@ -132,6 +172,14 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
+                <hr>
+                <div class="small-img-row text-xs-center">
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                </div>
             </div>
         </a>
     </div>
@@ -157,13 +205,16 @@ $pageTitle = "$applicationName - Main";
 <script>
 $(document).ready(function() {
 
-    function hidePopover(e) {
-        $(e).popover('hide');
-    }
-
-    // Sets up the popover defaults
-    $('.card').popover({
-        trigger: 'manual',
+    $('#house1').popover({
+        title: '12345 NW 3rd St, Orlando, FL 32816',
+        content:
+            '<h3>' +
+            '<div>' +
+            '' +
+            '</div>' +
+            '<hr>' +
+            '</h3>',
+        trigger: 'hover',
         placement: 'top',
         template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
         //offset: 15,
@@ -171,137 +222,88 @@ $(document).ready(function() {
         html: true
     });
 
-    var timer, parentPopover;
-
-    $('.card').hover(function() {
-        var self = this;
-        clearTimeout(timer);
-        $('.popover').hide(); //Hide any open popovers on other elements.
-        parentPopover = self
-        $(self).popover('show');
-    },
-    function() {
-        var self = this;
-        timer = setTimeout(function(){ hidePopover(self) }, 300);
-    });
-
-    $('.popover').live({
-        mouseover: function() {
-            clearTimeout(timer);
-        },
-        mouseleave: function() {
-            var self = this;
-            timer = setTimeout(function(){ hidePopover(parentPopover) }, 300);
-        }
-    });
-
-    $('#house1').popover({
-        title: '12345 NW 3rd St, Orlando, FL 32816',
-        content:
-            '<h3>' +
-            '<div>' +
-            '<img class="popover-image-small" data-src="holder.js/100px280" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280?text=+5" alt="Beautiful Home">' +
-            '</div>' +
-            '<hr>' +
-            '</h3>'
-    });
-
     $('#house2').popover({
-        trigger: "hover",
-        placement: "top",
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
         title: '12345 NW 3rd St, Orlando, FL 32816',
         content:
             '<h3>' +
             '<div>' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" alt="Beautiful Home">' +
+            '' +
             '</div>' +
             '<hr>' +
             '</h3>',
+        trigger: 'hover',
+        placement: 'top',
+        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
+        //offset: 15,
+        delay: { show: 350, hide: 100 },
         html: true
     });
 
     $('#house3').popover({
-        trigger: "hover",
-        placement: "top",
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
         title: '12345 NW 3rd St, Orlando, FL 32816',
         content:
             '<h3>' +
             '<div>' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" alt="Beautiful Home">' +
+            '' +
             '</div>' +
             '<hr>' +
             '</h3>',
+        trigger: 'hover',
+        placement: 'top',
+        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
+        //offset: 15,
+        delay: { show: 350, hide: 100 },
         html: true
     });
 
     $('#house4').popover({
-        trigger: "hover",
-        placement: "top",
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
         title: '12345 NW 3rd St, Orlando, FL 32816',
         content:
             '<h3>' +
             '<div>' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" alt="Beautiful Home">' +
+            '' +
             '</div>' +
             '<hr>' +
             '</h3>',
+        trigger: 'hover',
+        placement: 'top',
+        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
+        //offset: 15,
+        delay: { show: 350, hide: 100 },
         html: true
     });
 
     $('#house5').popover({
-        trigger: "hover",
-        placement: "top",
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
         title: '12345 NW 3rd St, Orlando, FL 32816',
         content:
             '<h3>' +
             '<div>' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" alt="Beautiful Home">' +
+            '' +
             '</div>' +
             '<hr>' +
             '</h3>',
+        trigger: 'hover',
+        placement: 'top',
+        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
+        //offset: 15,
+        delay: { show: 350, hide: 100 },
         html: true
     });
 
     $('#house6').popover({
-        trigger: "hover",
-        placement: "top",
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
         title: '12345 NW 3rd St, Orlando, FL 32816',
         content:
             '<h3>' +
             '<div>' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" data-src="holder.js/100x280/thumb" alt="Beautiful Home" data-holder-rendered="true">' +
-            '<img class="popover-image-small" alt="Beautiful Home">' +
+            '' +
             '</div>' +
             '<hr>' +
             '</h3>',
+        trigger: 'hover',
+        placement: 'top',
+        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
+        //offset: 15,
+        delay: { show: 350, hide: 100 },
         html: true
     });
 });
