@@ -205,6 +205,24 @@ $pageTitle = "$applicationName - Main";
 <script>
 $(document).ready(function() {
 
+    var toTopPageOffset = 220;
+    var toTopTimeDuration = 500;
+    $(window).scroll(function() {
+
+        if ($(this).scrollTop() > offset) {
+            $('.to-top').fadeIn(duration);
+        } else {
+            $('.to-top').fadeOut(duration);
+        }
+
+    });
+
+    $('.to-top').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, toTopTimeDuration);
+        return false;
+    });
+
     $('#house1').popover({
         title: '12345 NW 3rd St, Orlando, FL 32816',
         content:
