@@ -42,12 +42,19 @@
 }
 .small-img-row > img {
     margin-right: 0.2rem;
+    opacity: 0.7;
 }
 .small-img-row > img:first-child {
     margin-left: 0;
 }
 .small-img-row > img:last-child {
     margin-right: 0;
+}
+.small-img-row > img.active {
+    opacity: 1;
+}
+.small-img-row > img:hover {
+    opacity: 1.2;
 }
 .house-price {
     top: 220px;

@@ -55,15 +55,15 @@ $pageTitle = "$applicationName - Main";
             </a>
             <hr>
             <div class="small-img-row text-xs-center">
-                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
+                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
             </div>
         </div>
-        <a href="#">
-            <div id="house2" class="card" data-toggle="popover">
+        <div id="house2" class="card" data-toggle="popover">
+            <a href="#">
                 <img data-src="holder.js/100px280?text=House 2" alt="Beautiful Home" data-holder-rendered="true">
                 <p>
                     <div class="house-price">
@@ -76,18 +76,18 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
-                <hr>
-                <div class="small-img-row text-xs-center">
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                </div>
+            </a>
+            <hr>
+            <div class="small-img-row text-xs-center">
+                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
             </div>
-        </a>
-        <a href="#">
-            <div id="house3" class="card" data-toggle="popover">
+        </div>
+        <div id="house3" class="card" data-toggle="popover">
+            <a href="#">
                 <img data-src="holder.js/100px280?text=House 3" alt="Beautiful Home" data-holder-rendered="true">
                 <p>
                     <div class="house-price">
@@ -100,18 +100,18 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
-                <hr>
-                <div class="small-img-row text-xs-center">
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                </div>
+            </a>
+            <hr>
+            <div class="small-img-row text-xs-center">
+                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
             </div>
-        </a>
-        <a href="#">
-            <div id="house4" class="card" data-toggle="popover">
+        </div>
+        <div id="house4" class="card" data-toggle="popover">
+            <a href="#">
                 <img data-src="holder.js/100px280?text=House 4" alt="Beautiful Home" data-holder-rendered="true">
                 <p>
                     <div class="house-price">
@@ -124,18 +124,18 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
-                <hr>
-                <div class="small-img-row text-xs-center">
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                </div>
+            </a>
+            <hr>
+            <div class="small-img-row text-xs-center">
+                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
             </div>
-        </a>
-        <a href="#">
-            <div id="house5" class="card" data-toggle="popover">
+        </div>
+        <div id="house5" class="card" data-toggle="popover">
+            <a href="#">
                 <img data-src="holder.js/100px280?text=House 5" alt="Beautiful Home" data-holder-rendered="true">
                 <p>
                     <div class="house-price">
@@ -148,18 +148,18 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
-                <hr>
-                <div class="small-img-row text-xs-center">
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                </div>
+            </a>
+            <hr>
+            <div class="small-img-row text-xs-center">
+                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
             </div>
-        </a>
-        <a href="#">
-            <div id="house6" class="card" data-toggle="popover">
+        </div>
+        <div id="house6" class="card" data-toggle="popover">
+            <a href="#">
                 <img data-src="holder.js/100px280?text=House 6" alt="Beautiful Home" data-holder-rendered="true">
                 <p>
                     <div class="house-price">
@@ -172,16 +172,16 @@ $pageTitle = "$applicationName - Main";
                         4 bd <span aria-hidden="true">•</span> 4 ba
                     </div>
                 </p>
-                <hr>
-                <div class="small-img-row text-xs-center">
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                    <img class="popover-image-small" data-src="holder.js/56x48" alt="Beautiful Home" />
-                </div>
+            </a>
+            <hr>
+            <div class="small-img-row text-xs-center">
+                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
+                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
             </div>
-        </a>
+        </div>
     </div>
 </div>
 <!-- /Favorite Listings -->
@@ -207,15 +207,17 @@ $(document).ready(function() {
 
     var toTopPageOffset = 220;
     var toTopTimeDuration = 500;
+
+    /* Display to-top after certain offset
     $(window).scroll(function() {
 
         if ($(this).scrollTop() > offset) {
-            $('.to-top').fadeIn(duration);
+            $('.to-top').fadeIn(toTopTimeDuration);
         } else {
-            $('.to-top').fadeOut(duration);
+            $('.to-top').fadeOut(toTopTimeDuration);
         }
 
-    });
+    });*/
 
     $('.to-top').click(function(e) {
         e.preventDefault();
