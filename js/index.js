@@ -6,8 +6,10 @@
 
 var request;
 
-function loadIMG(e, img) {
-    $(e).attr('data-src', img);
+function loadIMG(id, e) {
+    $("#" + id).attr('src', $(e).attr('src'));
+    $(e).siblings().removeClass("active");
+    $(e).addClass("active");
 }
 
 $(document).ready(function() {

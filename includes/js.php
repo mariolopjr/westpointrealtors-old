@@ -16,5 +16,8 @@
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1M1pnn9VA5LsJOo0KT_XWKMbMU2gyKg&libraries=places"></script>
 
+<!-- LazyLoader -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/2.0.0/lazysizes.min.js"></script>
+
 <!-- Index JS -->
 <script src="js/index.js"></script>

@@ -55,11 +55,11 @@ $pageTitle = "$applicationName - Main";
             </a>
             <hr>
             <div class="small-img-row text-xs-center">
-                <img class="popover-image-small active" src="uploads/509 Park Way Brooksville, FL, 34601/Picture1.jpg" alt="Beautiful Home" onclick="loadIMG('house1IMG', 'holder.js/56x48?text=Pic 1')" />
-                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture2.jpg" alt="Beautiful Home"  onclick="loadIMG('house2IMG', 'holder.js/56x48?text=Pic 2')" />
-                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture3.jpg" alt="Beautiful Home"  onclick="loadIMG('house3IMG', 'holder.js/56x48?text=Pic 3')" />
-                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture4.jpg" alt="Beautiful Home"  onclick="loadIMG('house4IMG', 'holder.js/56x48?text=Pic 4')" />
-                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture5.jpg" alt="Beautiful Home"  onclick="loadIMG('house5IMG', 'holder.js/56x48?text=Pic 5')" />
+                <img class="popover-image-small active" src="uploads/509 Park Way Brooksville, FL, 34601/Picture1.jpg" alt="Beautiful Home" onclick="loadIMG('house1IMG', this)" />
+                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture2.jpg" alt="Beautiful Home"  onclick="loadIMG('house1IMG', this)" />
+                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture3.jpg" alt="Beautiful Home"  onclick="loadIMG('house1IMG', this)" />
+                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture4.jpg" alt="Beautiful Home"  onclick="loadIMG('house1IMG', this)" />
+                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture5.jpg" alt="Beautiful Home"  onclick="loadIMG('house1IMG', this)" />
             </div>
         </div>
         <div id="house2" class="card" data-toggle="popover">
@@ -228,12 +228,21 @@ $(document).ready(function() {
     $('#house1').popover({
         title: '509 Park Way, Brooksville, FL, 34601',
         content:
-            '<h3>' +
-            '<div>' +
-            '' +
+            '<div class="row">' +
+            '<div class="col-md-6">' +
+            'Price: $38,000' + "<br />" +
+            'Bed/Bath: 3/2' + "<br />" +
+            'Garage: 0' + "<br />" +
             '</div>' +
-            '<hr>' +
-            '</h3>',
+            '<div class="col-md-6 less-padding">' +
+            'Year: 1950' + "<br />" +
+            'Total Rooms: 7' + "<br />" +
+            'HOA Fees: $0.00' + "<br />" +
+            '</div>' +
+            '</div>' +
+            'Home Size: 1,512 sq ft' + "<br />" +
+            'Lot Size: 8,060 sq ft' + "<br />" +
+            'Housing Type: Single Family Home' + "<br />",
         trigger: 'hover',
         placement: 'top',
         template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
