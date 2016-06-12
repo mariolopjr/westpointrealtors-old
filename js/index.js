@@ -14,7 +14,7 @@ function loadIMG(id, e) {
 
 $(document).ready(function() {
 
-    var input = document.getElementById('searchField');
+    /*var input = document.getElementById('addressInput');
     var options = {
         types: ['(cities)'],
         componentRestrictions: {
@@ -22,5 +22,5 @@ $(document).ready(function() {
       }
     };
 
-    autocomplete = new google.maps.places.Autocomplete(input, options);
+    autocomplete = new google.maps.places.Autocomplete(input, options);*/
 });
