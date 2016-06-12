@@ -27,22 +27,17 @@
     /*max-height: 305px;*/
     border-radius: 0;
 }
-.card > img:first-child {
+.card > a > img:first-child {
     margin-bottom: .75rem;
     height: 280px;
     width: 100%;
     display: block;
 }
-.card > .popover-image-small {
-    margin-top: 1rem;
-    height: 48px;
-    width: 20%;
-    display: inline-block;
-    padding: 0.3rem;
-}
 .small-img-row > img {
     margin-right: 0.2rem;
-    opacity: 0.7;
+    opacity: 0.3;
+    height: 48px;
+    width: 18%;
 }
 .small-img-row > img:first-child {
     margin-left: 0;
@@ -54,28 +49,34 @@
     opacity: 1;
 }
 .small-img-row > img:hover {
-    opacity: 1.2;
+    opacity: 1;
+}
+.house-info-container {
+    background: rgba(0, 0, 0, 0.3);
+    height: 57px;
+    width: 354px;
+    top: 235px;
+    position: absolute;
+}
+.house-price,
+.house-address,
+.house-info {
+    font-size: 1rem;
+    position: absolute;
+    color: #fff;
 }
 .house-price {
-    top: 220px;
-    left: 20px;
+    top: -5px;
+    left: 5px;
     font-size: 1.8rem;
-    position: absolute;
-    color: #fff;
 }
 .house-address {
-    top: 260px;
-    left: 20px;
-    font-size: 1rem;
-    position: absolute;
-    color: #fff;
+    top: 33px;
+    left: 5px;
 }
 .house-info {
-    top: 230px;
-    left: 155px;
-    font-size: 1rem;
-    position: absolute;
-    color: #fff;
+    top: 5px;
+    left: 135px;
 }
 .popover-card {
     width: 33.333%;

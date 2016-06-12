@@ -40,26 +40,26 @@ $pageTitle = "$applicationName - Main";
     <div class="row">
         <div id="house1" class="card" data-toggle="popover">
             <a href="#">
-                <img data-src="holder.js/100px280?text=House 1" alt="Beautiful Home" data-holder-rendered="true">
-                <p>
+                <img id="house1IMG" src="uploads/509 Park Way Brooksville, FL, 34601/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true">
+                <div class="house-info-container">
                     <div class="house-price">
-                        $150,000
+                        $38,000
                     </div>
                     <div class="house-address">
-                        12345 NW 3rd St, Orlando, FL 32816
+                        509 Park Way, Brooksville, FL, 34601
                     </div>
                     <div class="house-info">
-                        4 bd <span aria-hidden="true">•</span> 4 ba
+                        3 bd <span aria-hidden="true">•</span> 2 ba <span aria-hidden="true">•</span> 1512 sqft
                     </div>
-                </p>
+                </div>
             </a>
             <hr>
             <div class="small-img-row text-xs-center">
-                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
+                <img class="popover-image-small active" src="uploads/509 Park Way Brooksville, FL, 34601/Picture1.jpg" alt="Beautiful Home" onclick="loadIMG('house1IMG', 'holder.js/56x48?text=Pic 1')" />
+                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture2.jpg" alt="Beautiful Home"  onclick="loadIMG('house2IMG', 'holder.js/56x48?text=Pic 2')" />
+                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture3.jpg" alt="Beautiful Home"  onclick="loadIMG('house3IMG', 'holder.js/56x48?text=Pic 3')" />
+                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture4.jpg" alt="Beautiful Home"  onclick="loadIMG('house4IMG', 'holder.js/56x48?text=Pic 4')" />
+                <img class="popover-image-small" src="uploads/509 Park Way Brooksville, FL, 34601/Picture5.jpg" alt="Beautiful Home"  onclick="loadIMG('house5IMG', 'holder.js/56x48?text=Pic 5')" />
             </div>
         </div>
         <div id="house2" class="card" data-toggle="popover">
@@ -226,7 +226,7 @@ $(document).ready(function() {
     });
 
     $('#house1').popover({
-        title: '12345 NW 3rd St, Orlando, FL 32816',
+        title: '509 Park Way, Brooksville, FL, 34601',
         content:
             '<h3>' +
             '<div>' +

@@ -13,5 +13,8 @@
 <!-- Holder -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.3/holder.min.js"></script>
 
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1M1pnn9VA5LsJOo0KT_XWKMbMU2gyKg&libraries=places"></script>
+
 <!-- Index JS -->
 <script src="js/index.js"></script>

@@ -24,7 +24,7 @@ $applicationVersion = techmunchies\functions\loadData ( TBL_SETTINGS, "applicati
                 <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <form class="form-inline pull-xs-right">
-              <input class="form-control" type="text" placeholder="Search Address">
+              <input id="searchField" class="form-control" type="text" placeholder="Search Address">
               <button class="btn btn-success-outline" type="submit">Search</button>
             </form>
         </ul>
