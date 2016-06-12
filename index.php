@@ -40,7 +40,7 @@ require_once WEB_ROOT . "includes/favoriteHouses.php";
 <!-- Favorite Listings  -->
 <div class="album text-muted">
     <div class="row">
-        <?=$favoriteHouses ["houses"] [ "house1" ] ["html"]?>
+        <?=$favoriteHouses ["houses"] [ "house0" ] ["html"]?>
         <div id="house2" class="card" data-toggle="popover">
             <a href="#">
                 <img data-src="holder.js/100px280?text=House 2" alt="Beautiful Home" data-holder-rendered="true">
@@ -205,92 +205,7 @@ $(document).ready(function() {
         return false;
     });
 
-    <?=$favoriteHouses ["houses"] [ "house1" ] ["js"]?>
-
-    $('#house2').popover({
-        title: '12345 NW 3rd St, Orlando, FL 32816',
-        content:
-            '<h3>' +
-            '<div>' +
-            '' +
-            '</div>' +
-            '<hr>' +
-            '</h3>',
-        trigger: 'hover',
-        placement: 'top',
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
-        //offset: 15,
-        delay: { show: 350, hide: 100 },
-        html: true
-    });
-
-    $('#house3').popover({
-        title: '12345 NW 3rd St, Orlando, FL 32816',
-        content:
-            '<h3>' +
-            '<div>' +
-            '' +
-            '</div>' +
-            '<hr>' +
-            '</h3>',
-        trigger: 'hover',
-        placement: 'top',
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
-        //offset: 15,
-        delay: { show: 350, hide: 100 },
-        html: true
-    });
-
-    $('#house4').popover({
-        title: '12345 NW 3rd St, Orlando, FL 32816',
-        content:
-            '<h3>' +
-            '<div>' +
-            '' +
-            '</div>' +
-            '<hr>' +
-            '</h3>',
-        trigger: 'hover',
-        placement: 'top',
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
-        //offset: 15,
-        delay: { show: 350, hide: 100 },
-        html: true
-    });
-
-    $('#house5').popover({
-        title: '12345 NW 3rd St, Orlando, FL 32816',
-        content:
-            '<h3>' +
-            '<div>' +
-            '' +
-            '</div>' +
-            '<hr>' +
-            '</h3>',
-        trigger: 'hover',
-        placement: 'top',
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
-        //offset: 15,
-        delay: { show: 350, hide: 100 },
-        html: true
-    });
-
-    $('#house6').popover({
-        title: '12345 NW 3rd St, Orlando, FL 32816',
-        content:
-            '<h3>' +
-            '<div>' +
-            '' +
-            '</div>' +
-            '<hr>' +
-            '</h3>',
-        trigger: 'hover',
-        placement: 'top',
-        template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
-        //offset: 15,
-        delay: { show: 350, hide: 100 },
-        html: true
-    });
+    <?=$favoriteHouses ["houses"] [ "house0" ] ["js"]?>
 });
 </script>
 </body>
