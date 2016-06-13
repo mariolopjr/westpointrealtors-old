@@ -3,6 +3,30 @@
  * Author: Mario Lopez
  *
  */
+
+.contact-info {
+    float: left;
+    max-width: 30rem;
+    margin-right: 3rem;
+}
+.navbar-collapse .container-fluid {
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid #55595c;
+}
+.navbar-collapse h4 {
+    color: #818a91;
+}
+.navbar-collapse .text-muted {
+    color: #818a91;
+}
+.navbar-nav .nav-link .active {
+    background-color: #5fb760;
+    color: #fff;
+}
+.affiliates img {
+    width: 122px;
+    height: 33px;
+}
 .jumbotron {
     padding-top: 6rem;
     padding-bottom: 6rem;

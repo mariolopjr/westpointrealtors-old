@@ -4,5 +4,8 @@
 <!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
+<!-- Footable -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/3.0.10/footable.bootstrap.min.css">
+
 <!-- Custom CSS -->
-<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="../css/index.css">

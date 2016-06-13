@@ -23,4 +23,24 @@ $(document).ready(function() {
     };
 
     autocomplete = new google.maps.places.Autocomplete(input, options);*/
+
+    var toTopPageOffset = 220;
+    var toTopTimeDuration = 500;
+
+    /* Display to-top after certain offset
+    $(window).scroll(function() {
+
+        if ($(this).scrollTop() > offset) {
+            $('.to-top').fadeIn(toTopTimeDuration);
+        } else {
+            $('.to-top').fadeOut(toTopTimeDuration);
+        }
+
+    });*/
+
+    $('.to-top').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, toTopTimeDuration);
+        return false;
+    });
 });

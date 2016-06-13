@@ -58,7 +58,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 
     // Grab Price and transform it
     $priceAmt = $result [$i] [ "price" ];
-    if ( $priceAmt == -1 ) {
+    if ( $priceAmt == 0 ) {
         $priceAmt = "$---,---";
     } else {
         $priceAmt = "$$priceAmt";
@@ -105,7 +105,6 @@ $active = $j == 1 ? " active" : "";
     </div>
 </div>
 <?php
-error_log ("iteration: $i");
 // Grab the first favorite home, and save it to return variable
 $favoriteHouses [ "houses" ] [ "house$i" ] ["html"] = ob_get_clean ();
 

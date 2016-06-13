@@ -41,126 +41,11 @@ require_once WEB_ROOT . "includes/favoriteHouses.php";
 <div class="album text-muted">
     <div class="row">
         <?=$favoriteHouses ["houses"] [ "house0" ] ["html"]?>
-        <div id="house2" class="card" data-toggle="popover">
-            <a href="#">
-                <img data-src="holder.js/100px280?text=House 2" alt="Beautiful Home" data-holder-rendered="true">
-                <p>
-                    <div class="house-price">
-                        $150,000
-                    </div>
-                    <div class="house-address">
-                        12345 NW 3rd St, Orlando, FL 32816
-                    </div>
-                    <div class="house-info">
-                        4 bd <span aria-hidden="true">•</span> 4 ba
-                    </div>
-                </p>
-            </a>
-            <hr>
-            <div class="small-img-row text-xs-center">
-                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
-            </div>
-        </div>
-        <div id="house3" class="card" data-toggle="popover">
-            <a href="#">
-                <img data-src="holder.js/100px280?text=House 3" alt="Beautiful Home" data-holder-rendered="true">
-                <p>
-                    <div class="house-price">
-                        $150,000
-                    </div>
-                    <div class="house-address">
-                        12345 NW 3rd St, Orlando, FL 32816
-                    </div>
-                    <div class="house-info">
-                        4 bd <span aria-hidden="true">•</span> 4 ba
-                    </div>
-                </p>
-            </a>
-            <hr>
-            <div class="small-img-row text-xs-center">
-                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
-            </div>
-        </div>
-        <div id="house4" class="card" data-toggle="popover">
-            <a href="#">
-                <img data-src="holder.js/100px280?text=House 4" alt="Beautiful Home" data-holder-rendered="true">
-                <p>
-                    <div class="house-price">
-                        $150,000
-                    </div>
-                    <div class="house-address">
-                        12345 NW 3rd St, Orlando, FL 32816
-                    </div>
-                    <div class="house-info">
-                        4 bd <span aria-hidden="true">•</span> 4 ba
-                    </div>
-                </p>
-            </a>
-            <hr>
-            <div class="small-img-row text-xs-center">
-                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
-            </div>
-        </div>
-        <div id="house5" class="card" data-toggle="popover">
-            <a href="#">
-                <img data-src="holder.js/100px280?text=House 5" alt="Beautiful Home" data-holder-rendered="true">
-                <p>
-                    <div class="house-price">
-                        $150,000
-                    </div>
-                    <div class="house-address">
-                        12345 NW 3rd St, Orlando, FL 32816
-                    </div>
-                    <div class="house-info">
-                        4 bd <span aria-hidden="true">•</span> 4 ba
-                    </div>
-                </p>
-            </a>
-            <hr>
-            <div class="small-img-row text-xs-center">
-                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
-            </div>
-        </div>
-        <div id="house6" class="card" data-toggle="popover">
-            <a href="#">
-                <img data-src="holder.js/100px280?text=House 6" alt="Beautiful Home" data-holder-rendered="true">
-                <p>
-                    <div class="house-price">
-                        $150,000
-                    </div>
-                    <div class="house-address">
-                        12345 NW 3rd St, Orlando, FL 32816
-                    </div>
-                    <div class="house-info">
-                        4 bd <span aria-hidden="true">•</span> 4 ba
-                    </div>
-                </p>
-            </a>
-            <hr>
-            <div class="small-img-row text-xs-center">
-                <img class="popover-image-small active" data-src="holder.js/56x48?text=Pic 1" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 2" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 3" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 4" alt="Beautiful Home" />
-                <img class="popover-image-small" data-src="holder.js/56x48?text=Pic 5" alt="Beautiful Home" />
-            </div>
-        </div>
+        <?=$favoriteHouses ["houses"] [ "house1" ] ["html"]?>
+        <?=$favoriteHouses ["houses"] [ "house2" ] ["html"]?>
+        <?=$favoriteHouses ["houses"] [ "house3" ] ["html"]?>
+        <?=$favoriteHouses ["houses"] [ "house4" ] ["html"]?>
+        <?=$favoriteHouses ["houses"] [ "house5" ] ["html"]?>
     </div>
 </div>
 <!-- /Favorite Listings -->
@@ -184,28 +69,12 @@ require_once WEB_ROOT . "includes/favoriteHouses.php";
 
 <script>
 $(document).ready(function() {
-
-    var toTopPageOffset = 220;
-    var toTopTimeDuration = 500;
-
-    /* Display to-top after certain offset
-    $(window).scroll(function() {
-
-        if ($(this).scrollTop() > offset) {
-            $('.to-top').fadeIn(toTopTimeDuration);
-        } else {
-            $('.to-top').fadeOut(toTopTimeDuration);
-        }
-
-    });*/
-
-    $('.to-top').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({scrollTop: 0}, toTopTimeDuration);
-        return false;
-    });
-
     <?=$favoriteHouses ["houses"] [ "house0" ] ["js"]?>
+    <?=$favoriteHouses ["houses"] [ "house1" ] ["js"]?>
+    <?=$favoriteHouses ["houses"] [ "house2" ] ["js"]?>
+    <?=$favoriteHouses ["houses"] [ "house3" ] ["js"]?>
+    <?=$favoriteHouses ["houses"] [ "house4" ] ["js"]?>
+    <?=$favoriteHouses ["houses"] [ "house5" ] ["js"]?>
 });
 </script>
 </body>
