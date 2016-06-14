@@ -7,8 +7,12 @@ $pageTitle = "$applicationName - Listings";
 
 $listProperties = $_SERVER['QUERY_STRING'] == "" ? true : false;
 
+error_log ( $_SERVER['QUERY_STRING'] );
+
 if ( $listProperties ) {
     require_once WEB_ROOT . "includes/listProperties.php";
+} else {
+    require_once WEB_ROOT . "includes/viewProperty.php";
 }
 
 ?>
@@ -43,22 +47,26 @@ if ( $listProperties ) {
 
 <?php if ( $listProperties ) { ?>
 <div class="table-responsive">
-    <table class="table table-striped footable footable-loaded" data-filter="#filter" data-page-size="10" data-page-previous-text="prev" data-page-next-text="next">
+    <table class="table table-striped footable footable-loaded" data-filtering="true" data-sorting="true" data-page-size="10" data-page-previous-text="prev" data-page-next-text="next">
         <thead>
             <tr>
-                <th class="houseAddress">Address</th>
+                <th class="footable-first-column footable-sorted houseAddress">Address</th>
                 <th class="housePrice">Price</th>
                 <th class="bedBathGarage">Bd/Ba/Ga</th>
                 <th class="homeSize">Home Size</th>
                 <th class="lotSize">Lot Size</th>
                 <th class="year" data-breakpoints="xs">Year</th>
-                <th>List Date</th>
+                <th class="footable-last-column footable-sortable" data-sort-initial="true" data-type="date" data-format-string="YYYY-MM-DD">List Date</th>
             </tr>
         </thead>
         <tbody>
             <?=$houseListings?>
         </tbody>
     </table>
+</div>
+<?php } else { ?>
+<div>
+    <?=$test?>
 </div>
 <?php } ?>
 

@@ -16,7 +16,7 @@ if ( $dbh->getDBH () === null ) {
 }
 
 // Fetch the homes
-$stmt = $dbh->getDBH ()->prepare ( "SELECT * FROM $tblProperties WHERE disabled = 0 ORDER BY list_date DESC;" );
+$stmt = $dbh->getDBH ()->prepare ( "SELECT * FROM $tblProperties WHERE disabled = 0;" );
 $stmt->execute ();
 
 // The returned result(s) of the SQL query
