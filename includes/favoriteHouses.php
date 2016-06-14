@@ -151,7 +151,7 @@ $('#house' + <?=$JSi?>).popover({
     html: true
 });
 <?php
-// Grab the first favorite home, and save it to return variable
-$favoriteHouses [ "houses" ] [ "house$i" ] ["js"] = ob_get_clean ();
+    // Grab the first favorite home, and save it to return variable
+    $favoriteHouses [ "houses" ] [ "house$i" ] ["js"] = ob_get_clean ();
 }
 ?>

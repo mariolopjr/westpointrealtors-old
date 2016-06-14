@@ -55,29 +55,8 @@ if ( $listProperties ) {
                 <th>List Date</th>
             </tr>
         </thead>
-        <!--<tbody id="statusList"></tbody>-->
         <tbody>
-            <td>
-                509 Park Way, Brooksville, FL, 34601
-            </td>
-            <td>
-                $38000
-            </td>
-            <td>
-                3 / 2 / 0
-            </td>
-            <td>
-                1512 sq ft
-            </td>
-            <td>
-                8060 sq ft
-            </td>
-            <td>
-                1950
-            </td>
-            <td>
-                2016-06-11
-            </td>
+            <?=$houseListings?>
         </tbody>
     </table>
 </div>
