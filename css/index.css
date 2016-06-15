@@ -137,3 +137,15 @@
     margin-left: -5px;
     padding-left: -5px;
 }
+.fooicon {
+    font-family: FontAwesome !important;
+}
+.fooicon-search::before {
+    content: "\f002";
+}
+.fooicon-sort::before {
+    content: "\f07d";
+}
+.fooicon-remove::before {
+    content: "\f00d";
+}

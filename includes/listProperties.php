@@ -49,11 +49,21 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     $HOAFees      = "$" . $result [$i] [ "hoa_fees" ]; // HOA Fees
     $listDate     = $result [$i] [ "list_date" ]; // List Date
 
+    $link = $address;
+
+    $link = str_replace ( ",", "_", $link );
+    $link = str_replace ( " ", "-", $link );
+
+    $link = "/listings?house=$link";
+
     // Start output buffering to capture auto-generated listings
     ob_start ();
 ?>
 
 <tr>
+    <td>
+        <a href="<?=$link?>" class="btn btn-success btn-sm" role="button" data-value="View">View</a>
+    </td>
     <td><?=$address?></td>
     <td><?=$priceAmt?></td>
     <td><?=$bedrooms?> / <?=$bathrooms?> / <?=$garages?></td>

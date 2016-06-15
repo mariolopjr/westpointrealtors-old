@@ -77,11 +77,18 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     $numOfPics    = $result [$i] [ "num_of_pictures" ] > 5
         ? 5 : $result [$i] [ "num_of_pictures" ] ; // Number of Pictures
 
+    $link = $address;
+
+    $link = str_replace ( ",", "_", $link );
+    $link = str_replace ( " ", "-", $link );
+
+    $link = "/listings?house=$link";
+
     // Start output buffering to capture auto-generated homes
     ob_start ();
 ?>
 <div id="house<?=$i?>" class="card" data-toggle="popover">
-    <a href="#">
+    <a href="<?=$link?>">
         <img id="house<?=$i?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true">
         <div class="house-info-container">
             <div class="house-price">

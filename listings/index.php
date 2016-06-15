@@ -7,8 +7,6 @@ $pageTitle = "$applicationName - Listings";
 
 $listProperties = $_SERVER['QUERY_STRING'] == "" ? true : false;
 
-error_log ( $_SERVER['QUERY_STRING'] );
-
 if ( $listProperties ) {
     require_once WEB_ROOT . "includes/listProperties.php";
 } else {
@@ -35,6 +33,8 @@ if ( $listProperties ) {
 <!-- /Site Header -->
 
 <div class="container">
+
+<?php if ( $listProperties ) { ?>
 <section class="jumbotron text-xs-center">
     <h1 class="jumbotron-heading">West Point Real Estate</h1>
     <p class="lead text-muted">
@@ -45,17 +45,17 @@ if ( $listProperties ) {
     <br />
 </section>
 
-<?php if ( $listProperties ) { ?>
 <div class="table-responsive">
-    <table class="table table-striped footable footable-loaded" data-filtering="true" data-sorting="true" data-page-size="10" data-page-previous-text="prev" data-page-next-text="next">
+    <table class="table table-striped footable footable-loaded" data-filtering="true" data-sorting="true" data-paging="true" data-paging-size="10">
         <thead>
             <tr>
-                <th class="footable-first-column footable-sorted houseAddress">Address</th>
+                <th class="footable-first-column" data-type="html" data-sortable="false" data-filterable="false">View</th>
+                <th class="houseAddress">Address</th>
                 <th class="housePrice">Price</th>
                 <th class="bedBathGarage">Bd/Ba/Ga</th>
                 <th class="homeSize">Home Size</th>
                 <th class="lotSize">Lot Size</th>
-                <th class="year" data-breakpoints="xs">Year</th>
+                <th class="footable-sorted year" data-breakpoints="xs">Year</th>
                 <th class="footable-last-column footable-sortable" data-sort-initial="true" data-type="date" data-format-string="YYYY-MM-DD">List Date</th>
             </tr>
         </thead>
@@ -65,9 +65,7 @@ if ( $listProperties ) {
     </table>
 </div>
 <?php } else { ?>
-<div>
-    <?=$test?>
-</div>
+<?=$house?>
 <?php } ?>
 
 <a href="#" class="center-block to-top">
