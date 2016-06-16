@@ -9,6 +9,9 @@ $inputAddress = str_replace ( "-", " ", $inputAddress );
 // Properties Table
 $tblProperties = TBL_PROPERTIES;
 
+// Sets up house listing
+$house = "";
+
 // Checks to see if database connection exists
 if ( $dbh->getDBH () === null ) {
     // Returns that the $dbh instance was not instantiated
@@ -28,43 +31,62 @@ if ( $result === false ) {
     error_log ( hernando\functions\lang ( "SQL_FETCH_ERROR" ) . $dbh->getDBH ()->error );
 }
 
-for ($i = 0; $i < $stmt->rowCount(); $i++) {
-
-    // Grab Price and transform it
-    $priceAmt = $result [$i] [ "price" ];
-    if ( $priceAmt == 0 ) {
-        $priceAmt = "$---,---";
-    } else {
-        $priceAmt = "$$priceAmt";
-    }
-
-    $address      = $result [$i] [ "address" ]; // Address
-    $bedrooms     = $result [$i] [ "bedrooms" ]; // Bedrooms
-    $bathrooms    = $result [$i] [ "bathrooms" ]; // Bathrooms
-    $garages      = $result [$i] [ "garages" ]; // Garages
-    $totalRooms   = $result [$i] [ "total_rooms" ]; // Total Rooms
-    $homeSize     = $result [$i] [ "home_size" ]; // Home Size sq ft
-    $lotSize      = $result [$i] [ "lot_size" ]; // Lot Size sq ft
-    $year         = $result [$i] [ "year" ]; // Year
-    $housingType  = $result [$i] [ "housing_type" ]; // Housing Type
-    $HOAFees      = "$" . $result [$i] [ "hoa_fees" ]; // HOA Fees
-    $numOfPics    = $result [$i] [ "num_of_pictures" ] > 5
-        ? 5 : $result [$i] [ "num_of_pictures" ] ; // Number of Pictures
-
-    $link = $address;
-
-    $link = str_replace ( ",", "_", $link );
-    $link = str_replace ( " ", "-", $link );
-
-    $link = "/listings?house=$link";
-
-    // Start output buffering to capture auto-generated homes
-    //ob_start ();
+// Grab Price and transform it
+$priceAmt = $result [$i] [ "price" ];
+if ( $priceAmt == 0 ) {
+    $priceAmt = "$---,---";
+} else {
+    $priceAmt = "$$priceAmt";
 }
+
+$bedrooms     = $result [0] [ "bedrooms" ]; // Bedrooms
+$bathrooms    = $result [0] [ "bathrooms" ]; // Bathrooms
+$garages      = $result [0] [ "garages" ]; // Garages
+$totalRooms   = $result [0] [ "total_rooms" ]; // Total Rooms
+$homeSize     = $result [0] [ "home_size" ]; // Home Size sq ft
+$lotSize      = $result [0] [ "lot_size" ]; // Lot Size sq ft
+$year         = $result [0] [ "year" ]; // Year
+$housingType  = $result [0] [ "housing_type" ]; // Housing Type
+$HOAFees      = "$" . $result [0] [ "hoa_fees" ]; // HOA Fees
+$numOfPics    = $result [0] [ "num_of_pictures" ]; // Number of Pictures
+$encAddress   = str_replace ( " ", "+", $inputAddress );
+
+// Start output buffering to capture auto-generated homes
+ob_start ();
 ?>
 
-<section class="jumbotron text-xs-center">
-    <a href="<?=$link?>">
-        <img id="house<?=$i?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true">
-    </a>
-</section>
+<div class="row">
+    <div class="col-md-6">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=<?=$encAddress?>&zoom=13&size=540x540&maptype=roadmap&key=AIzaSyAW1M1pnn9VA5LsJOo0KT_XWKMbMU2gyKg" />
+    </div>
+    <div class="col-md-6">
+        <img id="houseIMG" src="../uploads/<?=$inputAddress?>/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true" />
+<?php for ($i = 0; $i < $numOfPics; $i++ ) {
+$active = $i == 0 ? " active" : "";
+$div = $i % 5 == 0 ? '<div class="small-img-row text-xs-center">' . "\n" : "";
+$closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
+?>
+            <?=$div?><img class="popover-image-small<?=$active?>" src="/uploads/<?=$inputAddress?>/Picture<?=$i + 1?>.jpg" alt="Beautiful Home" onclick="loadIMG('houseIMG', this)" /><?=$closeDiv?>
+<?php } ?>
+    </div>
+    <div class="col-md-6">
+        <h1>Home Information</h1>
+        <p>
+            Address: <?=$inputAddress?><br />
+            Bedrooms:  <?=$bedrooms?><br />
+            Bathrooms: <?=$bathrooms?><br />
+            Total Rooms: <?=$totalRooms?><br />
+            Garages: <?=$garages?><br />
+        </p>
+    </div>
+    <div class="col-md-6">
+        <form>
+            CONTACT US
+        </form>
+    </div>
+</div>
+
+<?php
+// Grab the auto-generated listings and save it
+$house .= ob_get_clean ();
+?>
