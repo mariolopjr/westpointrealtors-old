@@ -5,7 +5,14 @@ require_once dirname ( dirname ( __FILE__ ) ) . "/loader.php";
 
 $pageTitle = "$applicationName - Listings";
 
-$listProperties = $_SERVER['QUERY_STRING'] == "" ? true : false;
+$query = "";
+$listPropertiesSearch = false;
+$listProperties = $_SERVER [ "QUERY_STRING" ] == "" ? true : false;
+if ( stripos ( $_SERVER [ "QUERY_STRING" ], "search=" ) !== false ) {
+    $listProperties = true;
+    $listPropertiesSearch = true;
+    $query = $_GET [ "search" ];
+}
 
 if ( $listProperties ) {
     require_once WEB_ROOT . "includes/listProperties.php";
@@ -98,6 +105,12 @@ if ( $listProperties ) {
 <script type="text/javascript">
 	$(function () {
 		$('.footable').footable();
+
+<?php
+if ( $listPropertiesSearch ) { ?>
+        $("#searchField").val("<?=$query?>");
+        $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > input").val("<?=$query?>");
+<?php } ?>
 	});
 </script>
 

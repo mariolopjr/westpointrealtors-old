@@ -63,8 +63,8 @@ $listingsSR     = $currentPage == "/listings/" ? $sr : "";
             <li class="nav-item">
                 <a class="nav-link" href="" data-toggle="collapse" data-target="#contact-header">Contact</a>
             </li>
-            <form class="form-inline pull-xs-right">
-              <input id="searchField" class="form-control" type="text" placeholder="Search Address">
+            <form class="form-inline pull-xs-right" action="/listings/" method="get">
+              <input id="searchField" name="search" class="form-control" type="text" placeholder="Search Address">
               <button class="btn btn-success-outline" type="submit">Search</button>
             </form>
         </ul>
