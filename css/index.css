@@ -19,9 +19,8 @@
 .navbar-collapse .text-muted {
     color: #818a91;
 }
-.navbar-nav .nav-link .active {
-    background-color: #5fb760;
-    color: #fff;
+#navbar-header > ul > li > a.active {
+    cursor: pointer;
 }
 .affiliates img {
     width: 122px;
