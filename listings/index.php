@@ -100,19 +100,6 @@ if ( $listProperties ) {
 <?php require_once WEB_ROOT . "includes/js.php"; ?>
 <!-- /Site JavaScript -->
 
-<script type="text/javascript">
-	$(function () {
-		$('.footable').footable();
-
-<?php
-if ( $listPropertiesSearch ) { ?>
-        $("#searchField").val("<?=$query?>");
-        $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > input").val("<?=$query?>");
-        $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-primary").click();
-<?php } ?>
-	});
-</script>
-
 <?php
 if ( $listProperties ) {
     echo $listingJS;

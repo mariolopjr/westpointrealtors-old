@@ -80,6 +80,13 @@ ob_start ();
 ?>
 <script>
 $(document).ready(function() {
+    $('.footable').footable();
+
+<?php if ( $query != "" ) { ?>
+    $("#searchField").val("<?=$query?>");
+    $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > input").val("<?=$query?>");
+    $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-primary").click();
+<?php } ?>
     $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-default.dropdown-toggle").remove();
 });
 </script>
