@@ -54,7 +54,7 @@ $encAddress   = str_replace ( " ", "+", $inputAddress );
 // Start output buffering to capture auto-generated homes
 ob_start ();
 ?>
-
+<a id="backBtn" href="/listings/" class="btn btn-success btn-sm" role="button" data-toggle="tooltip" data-placement="right" title="Back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
 <div class="row">
     <div class="col-md-6">
         <div id="map"></div>
@@ -70,7 +70,7 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
 <?php } ?>
     </div>
     <div class="col-md-6">
-        <h1>Home Information</h1>
+        <h1 class="text-xs-center">Home Information</h1>
         <p>
             Address: <?=$inputAddress?><br />
             Bedrooms:  <?=$bedrooms?><br />
@@ -80,8 +80,9 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
         </p>
     </div>
     <div class="col-md-6">
+        <h1 class="text-xs-center">CONTACT US</h1>
         <form>
-            CONTACT US
+            form
         </form>
     </div>
 </div>
@@ -102,10 +103,25 @@ ob_start ();
 }
 #map {
     width: 100%;
-    height: 540px;
-    padding: 1rem;
-    margin: 1rem;
+    height: 508px;
+    padding: 0;
+    margin: 2rem;
     margin-left: 0;
+}
+#backBtn {
+    position: absolute;
+    top: 5.4rem;
+    left: -0.2rem;
+}
+.small-img-row {
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+.small-img-row > img {
+    margin-right: 0.5rem;
+    opacity: 0.3;
+    height: 48px;
+    width: 18%;
 }
 </style>
 <?php
@@ -124,10 +140,11 @@ function initMap () {
   var coordinates = new google.maps.LatLng(-34.397, 150.644);
   var mapOptions = {
     zoom: 18,
+    fullscreenControl: true,
     center: coordinates,
     mapTypeControl: true,
     mapTypeControlOptions: {
-      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+      style: google.maps.MapTypeControlStyle.DEFAULT
     },
     navigationControl: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -167,6 +184,7 @@ function initMap () {
 }
 
 $(document).ready(function() {
+    $("#backBtn").tooltip();
     initMap ();
 });
 </script>
