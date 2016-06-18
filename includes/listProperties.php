@@ -24,7 +24,7 @@ $result = $stmt->fetchAll ( \PDO::FETCH_ASSOC );
 
 // Checks to see if the SQL query failed
 if ( $result === false ) {
-    error_log ( hernando\functions\lang ( "SQL_FETCH_ERROR" ) . $dbh->getDBH ()->error );
+    error_log ( techmunchies\functions\lang ( "SQL_FETCH_ERROR" ) . $dbh->getDBH ()->error );
 }
 
 for ($i = 0; $i < $stmt->rowCount(); $i++) {

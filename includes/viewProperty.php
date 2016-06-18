@@ -11,6 +11,9 @@ $tblProperties = TBL_PROPERTIES;
 // Sets up house listing
 $house = "";
 
+// Sets up HUD Link URI
+$HUDLinkURI = "http://www.hudhomestore.com/Listing/PropertyDetails.aspx?caseNumber=";
+
 // Checks to see if database connection exists
 if ( $dbh->getDBH () === null ) {
     // Returns that the $dbh instance was not instantiated
@@ -27,7 +30,7 @@ $result = $stmt->fetchAll ( \PDO::FETCH_ASSOC );
 
 // Checks to see if the SQL query failed
 if ( $result === false ) {
-    error_log ( hernando\functions\lang ( "SQL_FETCH_ERROR" ) . $dbh->getDBH ()->error );
+    error_log ( techmunchies\functions\lang ( "SQL_FETCH_ERROR" ) . $dbh->getDBH ()->error );
 }
 
 // Grab Price and transform it
@@ -48,7 +51,15 @@ $year         = $result [0] [ "year" ]; // Year
 $housingType  = $result [0] [ "housing_type" ]; // Housing Type
 $HOAFees      = "$" . $result [0] [ "hoa_fees" ]; // HOA Fees
 $numOfPics    = $result [0] [ "num_of_pictures" ]; // Number of Pictures
-$encAddress   = str_replace ( " ", "+", $inputAddress );
+$HUDHome      = $result [0] [ "hud_home" ]; // Is this a HUD Home?
+
+if ( $HUDHome == 1 ) {
+    $HUDCaseNum = $result [0] [ "hud_case_num" ]; // HUD Case Number
+    $HUDLink    = $HUDLinkURI . $HUDCaseNum; // Creates the link to load HUD listing
+}
+
+// Create Encoded address for Google Maps Geolocation
+$encAddress = str_replace ( " ", "+", $inputAddress );
 
 // Start output buffering to capture auto-generated homes
 ob_start ();
@@ -77,9 +88,12 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
             Total Rooms: <?=$totalRooms?><br />
             Garages: <?=$garages?><br />
         </p>
+        <div class="text-xs-center">
+            <a href="<?=$HUDLink?>" class="btn btn-success btn-sm" role="button" target="_blank">View HUD Listing</a>
+        </div>
     </div>
     <div class="col-md-6 second-row">
-        <h1 class="text-xs-center">CONTACT US</h1>
+        <h1 class="text-xs-center">Contact Us</h1>
         <form>
             form
         </form>
@@ -121,6 +135,9 @@ ob_start ();
     opacity: 0.3;
     height: 48px;
     width: 18%;
+}
+.second-row {
+    margin-top: 3rem;
 }
 </style>
 <?php
