@@ -34,6 +34,7 @@ if ( $listProperties ) {
 
 <?php
 if ( $listProperties ) {
+    echo $listingCSS;
 } else {
     echo $houseCSS;
 }

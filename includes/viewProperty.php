@@ -68,7 +68,7 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
             <?=$div?><img class="popover-image-small<?=$active?>" src="/uploads/<?=$inputAddress?>/Picture<?=$i + 1?>.jpg" alt="Beautiful Home" onclick="loadIMG('houseIMG', this)" /><?=$closeDiv?>
 <?php } ?>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 second-row">
         <h1 class="text-xs-center">Home Information</h1>
         <p>
             Address: <?=$inputAddress?><br />
@@ -78,7 +78,7 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
             Garages: <?=$garages?><br />
         </p>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 second-row">
         <h1 class="text-xs-center">CONTACT US</h1>
         <form>
             form

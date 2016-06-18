@@ -86,4 +86,24 @@ $(document).ready(function() {
 <?php
 // Grab the auto-generated listing JS and save it
 $listingJS .= ob_get_clean ();
+
+ob_start ();
+?>
+<style>
+.fooicon {
+    font-family: FontAwesome !important;
+}
+.fooicon-search::before {
+    content: "\f002";
+}
+.fooicon-sort::before {
+    content: "\f07d";
+}
+.fooicon-remove::before {
+    content: "\f00d";
+}
+</style>
+<?php
+// Grab the auto-generated listing CSS and save it
+$listingCSS .= ob_get_clean ();
 ?>
