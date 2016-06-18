@@ -76,4 +76,14 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     // Grab the auto-generated listings and save it
     $houseListings .= ob_get_clean ();
 }
+ob_start ();
+?>
+<script>
+$(document).ready(function() {
+    $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-default.dropdown-toggle").remove();
+});
+</script>
+<?php
+// Grab the auto-generated listing JS and save it
+$listingJS .= ob_get_clean ();
 ?>

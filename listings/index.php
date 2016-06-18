@@ -32,7 +32,12 @@ if ( $listProperties ) {
 <?php require_once WEB_ROOT . "includes/css.php"; ?>
 <!-- /Site CSS -->
 
-<?=$houseCSS?>
+<?php
+if ( $listProperties ) {
+} else {
+    echo $houseCSS;
+}
+?>
 
 </head>
 <body>
@@ -107,7 +112,13 @@ if ( $listPropertiesSearch ) { ?>
 	});
 </script>
 
-<?=$houseJS?>
+<?php
+if ( $listProperties ) {
+    echo $listingJS;
+} else {
+    echo $houseJS;
+}
+?>
 
 </body>
 </html>
