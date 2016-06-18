@@ -80,23 +80,62 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
 <?php } ?>
     </div>
     <div class="col-md-6 second-row">
-        <h1 class="text-xs-center">Home Information</h1>
-        <p>
-            Address: <?=$inputAddress?><br />
-            Bedrooms:  <?=$bedrooms?><br />
-            Bathrooms: <?=$bathrooms?><br />
-            Total Rooms: <?=$totalRooms?><br />
-            Garages: <?=$garages?><br />
-        </p>
-        <div class="text-xs-center">
-            <a href="<?=$HUDLink?>" class="btn btn-success btn-sm" role="button" target="_blank">View HUD Listing</a>
+        <div class="card">
+            <div class="card-header text-xs-center">
+                <h3 class="card-title">Home Information</h3>
+                <h6 class="card-subtitle text-muted"></h6>
+            </div>
+            <div class="card-block">
+                <p>
+                    Address: <?=$inputAddress?><br />
+                    Bedrooms:  <?=$bedrooms?><br />
+                    Bathrooms: <?=$bathrooms?><br />
+                    Total Rooms: <?=$totalRooms?><br />
+                    Garages: <?=$garages?><br />
+                </p>
+                <div class="text-xs-center">
+                    <a href="<?=$HUDLink?>" class="btn btn-success btn-sm" role="button" target="_blank">View HUD Listing</a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-md-6 second-row">
-        <h1 class="text-xs-center">Contact Us</h1>
-        <form>
-            form
-        </form>
+        <div class="card card-form">
+            <div class="card-header text-xs-center">
+                <h3 class="card-title">Contact Us</h3>
+                <h6 class="card-subtitle text-muted">Send us an email regarding this home</h6>
+            </div>
+            <div class="card-block">
+                <form>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" class="form-control" placeholder="Full Name" id="name" required data-validation-required-message="Please enter your full name" />
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email" />
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" class="form-control" placeholder="Phone" id="phone" required data-validation-regex-regex="\(\d{3}\)\s\d{3}-\d{4}" data-validation-required-message="Please enter your phone" data-validation-regex-message="Please match the following format: (123) 456-7890" />
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <textarea rows="10" cols="100" class="form-control" placeholder="Please enter your message" id="message" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Please enter at least 5 characters" maxlength="999"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-xs-center">
+                <button id="submitBtn" class="btn btn-success btn-sm" role="button">Submit</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -138,6 +177,19 @@ ob_start ();
 }
 .second-row {
     margin-top: 3rem;
+}
+.card {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: .25rem;
+    padding: 0;
+    margin-bottom: 0;
+}
+.card-form {
+    margin-left: 2rem;
+}
+form textarea {
+    resize: none;
 }
 </style>
 <?php
@@ -202,6 +254,7 @@ function initMap () {
 $(document).ready(function() {
     $("#backBtn").tooltip();
     initMap ();
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
 });
 </script>
 <?php
