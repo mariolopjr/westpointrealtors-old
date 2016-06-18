@@ -50,6 +50,9 @@
     /*max-height: 305px;*/
     border-radius: 0;
 }
+.card > a {
+    cursor: pointer;
+}
 .card > a > img:first-child {
     margin-bottom: .75rem;
     height: 280px;
@@ -61,6 +64,7 @@
     opacity: 0.3;
     height: 48px;
     width: 18%;
+    cursor: pointer;
 }
 .small-img-row > img:first-child {
     margin-left: 0;
