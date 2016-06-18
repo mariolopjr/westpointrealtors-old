@@ -32,15 +32,7 @@ if ( $listProperties ) {
 <?php require_once WEB_ROOT . "includes/css.php"; ?>
 <!-- /Site CSS -->
 
-<style>
-#houseIMG {
-    width: 100%;
-    height: 540px;
-    padding: 1rem;
-    margin: 1rem;
-    margin-right: 0;
-}
-</style>
+<?=$houseCSS?>
 
 </head>
 <body>

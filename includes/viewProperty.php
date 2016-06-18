@@ -87,8 +87,30 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
 </div>
 
 <?php
-// Grab the auto-generated listings and save it
+// Grab the auto-generated listing and save it
 $house .= ob_get_clean ();
+
+ob_start ();
+?>
+<style>
+#houseIMG {
+    width: 100%;
+    height: 540px;
+    padding: 1rem;
+    margin: 1rem;
+    margin-right: 0;
+}
+#map {
+    width: 100%;
+    height: 540px;
+    padding: 1rem;
+    margin: 1rem;
+    margin-left: 0;
+}
+</style>
+<?php
+// Grab the auto-generated listing CSS and save it
+$houseCSS .= ob_get_clean ();
 
 ob_start ();
 ?>
@@ -108,7 +130,8 @@ function initMap () {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
     },
     navigationControl: true,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    //streetView: new google.maps.StreetViewPanorama(document.getElementById("DIV-BOX"))
   };
   map = new google.maps.Map(document.getElementById("map"), mapOptions);
   if (geocoder) {
@@ -148,6 +171,6 @@ $(document).ready(function() {
 });
 </script>
 <?php
-// Grab the auto-generated listing map JS and save it
+// Grab the auto-generated listing JS and save it
 $houseJS .= ob_get_clean ();
 ?>
