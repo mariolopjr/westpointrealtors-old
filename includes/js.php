@@ -17,7 +17,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/3.0.10/footable.min.js"></script>
 
 <!-- Google Maps API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1M1pnn9VA5LsJOo0KT_XWKMbMU2gyKg&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1M1pnn9VA5LsJOo0KT_XWKMbMU2gyKg"></script>
 
 <!-- LazyLoader -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/2.0.0/lazysizes.min.js"></script>

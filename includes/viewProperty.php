@@ -57,7 +57,7 @@ ob_start ();
 
 <div class="row">
     <div class="col-md-6">
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=<?=$encAddress?>&zoom=13&size=540x540&maptype=roadmap&key=AIzaSyAW1M1pnn9VA5LsJOo0KT_XWKMbMU2gyKg" />
+        <div id="map"></div>
     </div>
     <div class="col-md-6">
         <img id="houseIMG" src="../uploads/<?=$inputAddress?>/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true" />
@@ -89,4 +89,65 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
 <?php
 // Grab the auto-generated listings and save it
 $house .= ob_get_clean ();
+
+ob_start ();
+?>
+<script>
+var geocoder;
+var map;
+var address = "<?=$encAddress?>";
+
+function initMap () {
+  geocoder = new google.maps.Geocoder();
+  var coordinates = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions = {
+    zoom: 18,
+    center: coordinates,
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    },
+    navigationControl: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  if (geocoder) {
+    geocoder.geocode({
+      'address': address
+    }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+          map.setCenter(results[0].geometry.location);
+
+          var infoWindow = new google.maps.InfoWindow({
+            content: '<b>' + address + '</b>',
+            size: new google.maps.Size(150, 50)
+          });
+
+          var houseMarker = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map,
+            title: address
+          });
+          google.maps.event.addListener(houseMarker, 'click', function() {
+            infoWindow.open(map, houseMarker);
+          });
+
+        } else {
+          alert("No results found");
+        }
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+}
+
+$(document).ready(function() {
+    initMap ();
+});
+</script>
+<?php
+// Grab the auto-generated listing map JS and save it
+$houseJS .= ob_get_clean ();
 ?>

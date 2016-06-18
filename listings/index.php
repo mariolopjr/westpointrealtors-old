@@ -110,9 +110,12 @@ if ( $listProperties ) {
 if ( $listPropertiesSearch ) { ?>
         $("#searchField").val("<?=$query?>");
         $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > input").val("<?=$query?>");
+        $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-primary").click();
 <?php } ?>
 	});
 </script>
+
+<?=$houseJS?>
 
 </body>
 </html>
