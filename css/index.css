@@ -149,10 +149,3 @@
 .fooicon-remove::before {
     content: "\f00d";
 }
-#map {
-    width: 100%;
-    height: 540px;
-    padding: 1rem;
-    margin: 1rem;
-    margin-right: 0;
-}
