@@ -112,20 +112,21 @@
     font-size: 0.5rem;
 }
 .to-top {
-  background-color: #004F25;
+  background-color: #5FB760;
   border-radius: 4px 4px 0 0;
-  color: #FFFFFF;
+  color: #FFF;
   width: 3.6rem;
   font-size: 1.8rem;
   text-align: center;
   text-transform: uppercase;
-  opacity: 0.8;
   transition: all 0.2s ease-in-out 0s;
   top: 3rem;
   position: relative;
+  cursor: pointer;
 }
 .to-top:hover {
-  background-color: #0FBE7C;
+  background-color: #489C48;
+  color: #FFF;
 }
 .footer {
     margin-top: 3rem;

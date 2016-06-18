@@ -50,18 +50,8 @@ require_once WEB_ROOT . "includes/favoriteHouses.php";
 </div>
 <!-- /Favorite Listings -->
 
-<a href="#" class="center-block to-top">
-    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
-</a>
-
-</div>
-
-<!-- Footer  -->
-<div class="footerContactBlock">
-    <!-- Load footer -->
-    <?php include "footer.php"; ?>
-</div>
-<!-- /Footer -->
+<!-- Load footer -->
+<?php include WEB_ROOT . "footer.php"; ?>
 
 <!-- Site JavaScript  -->
 <?php require_once WEB_ROOT . "includes/js.php"; ?>
