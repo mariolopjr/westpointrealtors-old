@@ -3,8 +3,7 @@
 // Grabs values from GET data
 $inputAddress = $_GET [ "house" ];
 
-$inputAddress = str_replace ( "_", ",", $inputAddress );
-$inputAddress = str_replace ( "-", " ", $inputAddress );
+$inputAddress = str_replace ( "+", " ", $inputAddress );
 
 // Properties Table
 $tblProperties = TBL_PROPERTIES;
@@ -54,7 +53,7 @@ $encAddress   = str_replace ( " ", "+", $inputAddress );
 // Start output buffering to capture auto-generated homes
 ob_start ();
 ?>
-<a id="backBtn" href="/listings/" class="btn btn-success btn-sm" role="button" data-toggle="tooltip" data-placement="right" title="Back"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+<a id="backBtn" href="/listings/" class="btn btn-success btn-sm" role="button" data-toggle="tooltip" data-placement="right" title="Listings"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
 <div class="row">
     <div class="col-md-6">
         <div id="map"></div>

@@ -51,8 +51,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 
     $link = $address;
 
-    $link = str_replace ( ",", "_", $link );
-    $link = str_replace ( " ", "-", $link );
+    $link = str_replace ( " ", "+", $link );
 
     $link = "/listings?house=$link";
 
