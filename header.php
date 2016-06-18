@@ -22,8 +22,8 @@ $sr     = ' <span class="sr-only">(current)</span>';
 // Sets active and sr classes
 $homeActive     = $currentPage == "/" ? $active : "";
 $homeSR         = $currentPage == "/" ? $sr : "";
-$listingsActive = $currentPage == "/listings/" ? $active : "";
-$listingsSR     = $currentPage == "/listings/" ? $sr : "";
+$listingsActive = stripos ( $currentPage, "/listings/" ) !== false ? $active : "";
+$listingsSR     = stripos ( $currentPage, "/listings/" ) !== false ? $sr : "";
 
 ?>
 
