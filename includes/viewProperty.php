@@ -131,8 +131,8 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                             <p class="help-block"></p>
                         </div>
                     </div>
-                    <div class="checkbox checkbox-primary checkbox-circle">
-                        <input type="checkbox" id="agent" name="agent" value="init" data-on-color="success" data-off-color="danger" data-on-text="Yes" data-off-text="No" data-indeterminate="true">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="agent" name="agent" value="init" data-on-color="success" data-off-color="danger" data-on-text="Yes" data-off-text="No" data-indeterminate="true" data-validation-callback-callback="checkboxValidator">
                         <label>
                             Do you currently have an agent?
                         </label>
@@ -194,9 +194,13 @@ ob_start ();
 }
 .card-form {
     margin-left: 2rem;
+    width: 508px;
 }
 form textarea {
     resize: none;
+}
+.checkbox-container > label {
+    margin-left: 0.5rem;
 }
 </style>
 <?php
@@ -258,10 +262,23 @@ function initMap () {
   }
 }
 
+function checkboxValidator ($el, value, callback) {
+    callback ({
+        value: value,
+        valid: /(Yes)|(No)/.test(value),
+        message: "Please select whether you have an agent or not"
+    });
+}
+
 $(document).ready(function() {
     $("#backBtn").tooltip();
     initMap ();
-    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation({
+        preventSubmit: true,
+        submitError: function($form, event, errors) {
+            // Submit error, do something if needed
+        }
+    });
     $("#agent").bootstrapSwitch();
     $("#agent").on('switchChange.bootstrapSwitch', function(e, s) {
         if (s === true) {
