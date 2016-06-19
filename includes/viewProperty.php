@@ -106,7 +106,7 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                 <h6 class="card-subtitle text-muted">Send us an email regarding this home</h6>
             </div>
             <div class="card-block">
-                <form>
+                <form id="contact">
                     <div class="control-group">
                         <div class="controls">
                             <input type="text" class="form-control" placeholder="Full Name" id="name" required data-validation-required-message="Please enter your full name" />
@@ -136,6 +136,10 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                         <label>
                             Do you currently have an agent?
                         </label>
+                        <p class="help-block"></p>
+                    </div>
+                    <div class="row">
+                        <div class="g-recaptcha col-sm-3 col-sm-offset-2" data-sitekey="6Leg8CITAAAAAMl9KLLuKNT9TqyJuXq0nz2M21gw"></div>
                     </div>
                 </form>
             </div>
@@ -213,6 +217,7 @@ ob_start ();
 var geocoder;
 var map;
 var address = "<?=$encAddress?>";
+var request;
 
 function initMap () {
   geocoder = new google.maps.Geocoder();
@@ -280,12 +285,99 @@ $(document).ready(function() {
         }
     });
     $("#agent").bootstrapSwitch();
-    $("#agent").on('switchChange.bootstrapSwitch', function(e, s) {
-        if (s === true) {
+    $("#agent").on('switchChange.bootstrapSwitch', function(event, state) {
+        if (state === true) {
             $("#agent").val("Yes");
         } else {
             $("#agent").val("No");
         }
+    });
+
+    // Bind to the submit event of the addCustomerForm form
+    $("#contact").submit(function (event) {
+
+        // Abort any pending request
+        if (request) {
+            request.abort();
+        }
+
+        // setup some local variables
+        var $form = $(this);
+
+        // Let's select and cache all the fields
+        var $inputs = $form.find("input, select, button, textarea");
+
+        // Serialize the data in the form
+        var serializedData = $form.serialize();
+
+        // Add address to POST
+        var address = "&address=<?=$inputAddress?>";
+        serializedData += address;
+
+        // Let's disable the inputs for the duration of the Ajax request.
+        // Note: we disable elements AFTER the form data has been serialized.
+        // Disabled form elements will not be serialized.
+        $inputs.prop("disabled", true);
+
+        // Fire off the POST request to writeConfig.php
+        request = $.ajax({
+
+            url: "includes/contact.php",
+            type: "POST",
+            data: serializedData
+
+        });
+
+        // Callback handler that will be called on success
+        request.done(function (response, textStatus, jqXhr) {
+
+            var returnStatus = $.evalJSON(response).returnStatus; // Grabs the return status from the returned JSON
+            var errorLog = $.evalJSON(response).errorLog; // Grabs the error log from the returned JSON
+
+            if (returnStatus === "Success") {
+
+                // Refresh the page
+                setTimeout(function() { window.location.reload(true); }, 1);
+
+            } else {
+
+                if (returnStatus === "Fail User") {
+
+                    alert("Wrong email or password!");
+
+                } else {
+
+                    // Refresh the page
+                    setTimeout(function () { window.location.reload(true); }, 1);
+
+                }
+
+            }
+
+        });
+
+        // Callback handler that will be called on failure
+        request.fail(function (jqXhr, textStatus, errorThrown) {
+
+            // Log the error to the console
+            console.error(
+               "The following error occurred: " +
+                  textStatus, errorThrown
+            );
+
+        });
+
+        // Callback handler that will be called regardless
+        // if the request failed or succeeded
+        request.always(function () {
+
+            // Reenable the inputs
+            $inputs.prop("disabled", false);
+
+        });
+
+        // Prevent default posting of form
+        event.preventDefault();
     });
 });
 </script>

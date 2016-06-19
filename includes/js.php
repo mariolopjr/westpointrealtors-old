@@ -19,14 +19,17 @@
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1M1pnn9VA5LsJOo0KT_XWKMbMU2gyKg"></script>
 
+<!-- Google ReCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
 <!-- jqBootstrapValidation -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqBootstrapValidation/1.3.7/jqBootstrapValidation.min.js"></script>
 
-<!-- LazyLoader -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/2.0.0/lazysizes.min.js"></script>
-
 <!-- Bootstrap Switch -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+
+<!-- LazyLoader -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/2.0.0/lazysizes.min.js"></script>
 
 <!-- Index JS -->
 <script src="../js/index.js"></script>
