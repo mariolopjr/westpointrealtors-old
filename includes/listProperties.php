@@ -5,6 +5,8 @@ require_once dirname ( dirname ( __FILE__ ) ) . "/loader.php";
 
 // Sets up house listings
 $houseListings = "";
+$listingCSS    = "";
+$listingJS     = "";
 
 // Properties Table
 $tblProperties = TBL_PROPERTIES;

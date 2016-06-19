@@ -10,6 +10,8 @@ $tblProperties = TBL_PROPERTIES;
 
 // Sets up house listing
 $house = "";
+$houseCSS = "";
+$houseJS = "";
 
 // Sets up HUD Link URI
 $HUDLinkURI = "http://www.hudhomestore.com/Listing/PropertyDetails.aspx?caseNumber=";
@@ -34,7 +36,7 @@ if ( $result === false ) {
 }
 
 // Grab Price and transform it
-$priceAmt = $result [$i] [ "price" ];
+$priceAmt = $result [0] [ "price" ];
 if ( $priceAmt == 0 ) {
     $priceAmt = "$---,---";
 } else {
@@ -109,25 +111,25 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                 <form id="contact">
                     <div class="control-group">
                         <div class="controls">
-                            <input type="text" class="form-control" placeholder="Full Name" id="name" required data-validation-required-message="Please enter your full name" />
+                            <input type="text" class="form-control" placeholder="Full Name" id="name" name="name" required data-validation-required-message="Please enter your full name" />
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email" />
+                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" required data-validation-required-message="Please enter your email" />
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <input type="text" class="form-control" placeholder="Phone" id="phone" required data-validation-regex-regex="\(\d{3}\)\s\d{3}-\d{4}" data-validation-required-message="Please enter your phone" data-validation-regex-message="Please match the following format: (123) 456-7890" />
+                            <input type="text" class="form-control" placeholder="Phone" id="phone" name="phone" required data-validation-regex-regex="\(\d{3}\)\s\d{3}-\d{4}" data-validation-required-message="Please enter your phone" data-validation-regex-message="Please match the following format: (123) 456-7890" />
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <textarea rows="10" cols="100" class="form-control" placeholder="Please enter your message" id="message" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Please enter at least 5 characters" maxlength="999"></textarea>
+                            <textarea rows="10" cols="100" class="form-control" placeholder="Please enter your message" id="message" name="message" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Please enter at least 5 characters" maxlength="999"></textarea>
                             <p class="help-block"></p>
                         </div>
                     </div>
@@ -279,10 +281,7 @@ $(document).ready(function() {
     $("#backBtn").tooltip();
     initMap ();
     $("input,select,textarea").not("[type=submit]").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function($form, event, errors) {
-            // Submit error, do something if needed
-        }
+        preventSubmit: true
     });
     $("#agent").bootstrapSwitch();
     $("#agent").on('switchChange.bootstrapSwitch', function(event, state) {
@@ -293,7 +292,15 @@ $(document).ready(function() {
         }
     });
 
-    // Bind to the submit event of the addCustomerForm form
+    // Allow the contact form to be submitted by a button outside of the form
+    $(document.body).on("click", "#submitBtn", function () {
+
+        // Submit the contact form
+        $("#contact").submit();
+
+    });
+
+    // Bind to the submit event of the contact form
     $("#contact").submit(function (event) {
 
         // Abort any pending request
@@ -322,7 +329,7 @@ $(document).ready(function() {
         // Fire off the POST request to writeConfig.php
         request = $.ajax({
 
-            url: "includes/contact.php",
+            url: "../includes/contact.php",
             type: "POST",
             data: serializedData
 
@@ -331,24 +338,24 @@ $(document).ready(function() {
         // Callback handler that will be called on success
         request.done(function (response, textStatus, jqXhr) {
 
-            var returnStatus = $.evalJSON(response).returnStatus; // Grabs the return status from the returned JSON
-            var errorLog = $.evalJSON(response).errorLog; // Grabs the error log from the returned JSON
+            var status = $.evalJSON(response).status; // Grabs the return status from the returned JSON
+            var content = $.evalJSON(response).content; // Grabs the error log from the returned JSON
 
-            if (returnStatus === "Success") {
+            if (status === "Success") {
 
                 // Refresh the page
-                setTimeout(function() { window.location.reload(true); }, 1);
+                //setTimeout(function() { window.location.reload(true); }, 1);
 
             } else {
 
-                if (returnStatus === "Fail User") {
+                if (status === "Fail User") {
 
                     alert("Wrong email or password!");
 
                 } else {
 
                     // Refresh the page
-                    setTimeout(function () { window.location.reload(true); }, 1);
+                    //setTimeout(function () { window.location.reload(true); }, 1);
 
                 }
 
