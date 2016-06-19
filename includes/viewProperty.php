@@ -83,7 +83,7 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
         <div class="card">
             <div class="card-header text-xs-center">
                 <h3 class="card-title">Home Information</h3>
-                <h6 class="card-subtitle text-muted"></h6>
+                <h6 class="card-subtitle text-muted">&nbsp;</h6>
             </div>
             <div class="card-block">
                 <p>
@@ -128,7 +128,14 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                     <div class="control-group">
                         <div class="controls">
                             <textarea rows="10" cols="100" class="form-control" placeholder="Please enter your message" id="message" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Please enter at least 5 characters" maxlength="999"></textarea>
+                            <p class="help-block"></p>
                         </div>
+                    </div>
+                    <div class="checkbox checkbox-primary checkbox-circle">
+                        <input type="checkbox" id="agent" name="agent" value="init" data-on-color="success" data-off-color="danger" data-on-text="Yes" data-off-text="No" data-indeterminate="true">
+                        <label>
+                            Do you currently have an agent?
+                        </label>
                     </div>
                 </form>
             </div>
@@ -255,6 +262,14 @@ $(document).ready(function() {
     $("#backBtn").tooltip();
     initMap ();
     $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+    $("#agent").bootstrapSwitch();
+    $("#agent").on('switchChange.bootstrapSwitch', function(e, s) {
+        if (s === true) {
+            $("#agent").val("Yes");
+        } else {
+            $("#agent").val("No");
+        }
+    });
 });
 </script>
 <?php

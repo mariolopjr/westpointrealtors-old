@@ -25,6 +25,9 @@
 <!-- LazyLoader -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/2.0.0/lazysizes.min.js"></script>
 
+<!-- Bootstrap Switch -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+
 <!-- Index JS -->
 <script src="../js/index.js"></script>
 
