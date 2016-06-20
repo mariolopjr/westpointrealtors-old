@@ -72,9 +72,9 @@ $address = isset ( $_POST[ 'address' ] ) ? $_POST[ 'address' ] : FALSE;
 $name    = isset ( $_POST[ 'name' ] )    ? $_POST[ 'name' ] : FALSE;
 $email   = isset ( $_POST[ 'email' ] )   ? $_POST[ 'email' ] : FALSE;
 $phone   = isset ( $_POST[ 'phone' ] )   ? $_POST[ 'phone' ] : FALSE;
-$message = isset ( $_POST[ 'message' ] ) ?
-    ( $_POST[ 'message' ] != "init" ? $_POST[ 'message' ] : FALSE ) : FALSE;
-$agent   = isset ( $_POST[ 'agent' ] )   ? $_POST[ 'agent' ] : FALSE;
+$message = isset ( $_POST[ 'message' ] ) ? $_POST[ 'message' ] : FALSE;
+$agent = isset ( $_POST[ 'agent' ] ) ?
+    ( $_POST[ 'agent' ] != "init" ? $_POST[ 'agent' ] : FALSE ) : FALSE;
 
 /*
 // Checks if Name was filled
@@ -143,7 +143,7 @@ if( !$agent ) {
 }
 
 // Validates Email
-if(!preg_match("/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i", $email)) {
+/*if(!preg_match("/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i", $email)) {
 
     error_log("Email failed validation.");
 
@@ -156,7 +156,7 @@ if(!preg_match("/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6
 }
 
 // Validates Phone
-if(!preg_match("/^\(\d{3}\)\s\d{3}-\d{4}$/", $phone)) {
+if ( !preg_match("/^\(\d{3}\)\s\d{3}-\d{4}$/", $phone ) ) {
 
     error_log("Phone failed validation.");
 
@@ -166,29 +166,13 @@ if(!preg_match("/^\(\d{3}\)\s\d{3}-\d{4}$/", $phone)) {
     echo json_encode ( $ret );
     die ();
 
-}
+}*/
 
-// Sanitize inputs from email-based injections
-$sanitizeInputFromInjection = array("content-type", "bcc:", "to:", "cc:", "href");
-$requestFirstName = str_replace($sanitizeInputFromInjection, "", $requestFirstName);
-$requestLastName  = str_replace($sanitizeInputFromInjection, "", $requestLastName);
-$requestPhone     = str_replace($sanitizeInputFromInjection, "", $requestPhone);
-$requestEmail     = str_replace($sanitizeInputFromInjection, "", $requestEmail);
-$requestAddress1  = str_replace($sanitizeInputFromInjection, "", $requestAddress1);
-$requestAddress2  = str_replace($sanitizeInputFromInjection, "", $requestAddress2);
-$requestZip       = str_replace($sanitizeInputFromInjection, "", $requestZip);
+// Send email via Mailgun
 
-// Sanitize inputs from SQL-based injections
-$requestFirstName = $db->getDBO()->real_escape_string($requestFirstName);
-$requestLastName  = $db->getDBO()->real_escape_string($requestLastName);
-$requestPhone     = $db->getDBO()->real_escape_string($requestPhone);
-$requestEmail     = $db->getDBO()->real_escape_string($requestEmail);
-$requestAddress1  = $db->getDBO()->real_escape_string($requestAddress1);
-$requestAddress2  = $db->getDBO()->real_escape_string($requestAddress2);
-$requestZip       = $db->getDBO()->real_escape_string($requestZip);
-*/
-// Set the To Recipient email
+// Set up email data
 $to = techmunchies\functions\loadData ( TBL_SETTINGS, "agentEmail" );
+$mg = "mailgun@westpointrealtors.com";
 
 $body = "House Request\n\nDate/Time Submitted: $submissionDateTime\n\n";
 
@@ -202,12 +186,59 @@ $body .= "Has an Agent: $agent\n";
 // Create email header
 $subject = "House Request from $name - Submitted on: $submissionDateTime";
 
-$header = "From: $name <$email>\r\nReply-To: $name <$email>\r\n";
+// Set up PHP POST Request using CURL
+$mailgunAPIKey = "key-efdc46c4913f09f91fb50e851a4934e5";
+$mailgunURL    = "https://api.mailgun.net/v3/westpointrealtors.com/messages";
+$mailgunData   = array (
+	"from"    => "Mario Lopez <$mg>",
+	"to"      => "$to",
+    "subject" => "$subject",
+    "text"    => "$body"
+);
 
-// Send the request email to site owner TODO Check whether email was sent successfully (return code 1), otherwise, kill script
-$status = mail ( $to, $subject, $body, $header );
+// Holds the Mailgun POST string
+$mailgunPOSTData = "";
 
-// TODO Once the site owner is emailed, email a submission confirmation email to requestee
+// Convert array into URL string
+foreach ( $mailgunData as $key => $value ) {
+
+    $mailgunPOSTData .= $key . "=" . $value . "&";
+
+}
+
+// Remove extra "&"
+$mailgunPOSTData = rtrim ( $mailgunPOSTData, "&" );
+
+// Open a new curl connection
+$mailgunCURL = curl_init ();
+
+// Initialize the CURL connection with the POST data created ealier
+curl_setopt ( $mailgunCURL, CURLOPT_URL, $mailgunURL );
+curl_setopt ( $mailgunCURL, CURLOPT_POST, count ( $mailgunData ) );
+curl_setopt ( $mailgunCURL, CURLOPT_POSTFIELDS, $mailgunPOSTData );
+curl_setopt ( $mailgunCURL, CURLOPT_RETURNTRANSFER, true );
+curl_setopt ( $mailgunCURL, CURLOPT_USERPWD, "api:$mailgunAPIKey");
+
+// POST data to Mailgun API and save the result
+$mailgunResult = curl_exec ( $mailgunCURL );
+
+// Close CURL connection
+curl_close ( $mailgunCURL );
+
+// Mailgun result as a PHP array
+$mailgunJSON = json_decode ( $mailgunResult, true );
+
+if ( $mailgunJSON [ "message" ] != "Queued. Thank you." ) {
+
+    error_log ( "Mailgun failed with the following error: " . $mailgunJSON [ "message" ] );
+
+    $ret [ "status" ]  = "Fail Mailgun";
+    $ret [ "content" ] = "Mailgun failed with the following error: " . $mailgunJSON [ "message" ];
+
+    echo json_encode ( $ret );
+    die ();
+
+}
 
 $ret [ "status" ] = "Success";
 
