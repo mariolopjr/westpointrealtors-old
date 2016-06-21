@@ -54,6 +54,8 @@ $housingType  = $result [0] [ "housing_type" ]; // Housing Type
 $HOAFees      = "$" . $result [0] [ "hoa_fees" ]; // HOA Fees
 $numOfPics    = $result [0] [ "num_of_pictures" ]; // Number of Pictures
 $HUDHome      = $result [0] [ "hud_home" ]; // Is this a HUD Home?
+$status       = $result [0] [ "status" ]; // Status
+$description  = $result [0] [ "description" ]; // Description
 
 if ( $HUDHome == 1 ) {
     $HUDCaseNum = $result [0] [ "hud_case_num" ]; // HUD Case Number
@@ -67,6 +69,7 @@ $encAddress = str_replace ( " ", "+", $inputAddress );
 ob_start ();
 ?>
 <a id="backBtn" href="/listings/" class="btn btn-success btn-sm" role="button" data-toggle="tooltip" data-placement="right" title="Listings"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+<h1 class="address-title text-xs-center"><?=$inputAddress?></h1>
 <div class="row">
     <div class="col-md-6">
         <div id="map"></div>
@@ -94,6 +97,14 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                     Bathrooms: <?=$bathrooms?><br />
                     Total Rooms: <?=$totalRooms?><br />
                     Garages: <?=$garages?><br />
+                    Year: <?=$year?><br />
+                    Housing Type: <?=$housingType?><br />
+                    HOA Fees: <?=$HOAFees?><br />
+                    Status: <?=$status?><br /><br />
+
+                    <?php if ( $description != "" ) { ?>
+                    <?=$description?>
+                    <?php } ?>
                 </p>
                 <div class="text-xs-center">
                     <a href="<?=$HUDLink?>" class="btn btn-success btn-sm" role="button" target="_blank">View HUD Listing</a>
@@ -133,17 +144,24 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                             <p class="help-block"></p>
                         </div>
                     </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="agent" name="agent" value="init" data-on-color="success" data-off-color="danger" data-on-text="Yes" data-off-text="No" data-indeterminate="true" data-validation-callback-callback="checkboxValidator">
-                        <label>
-                            Do you currently have an agent?
-                        </label>
+                    <div class="control-group">
+                        Do you have a Real Estate agent?&nbsp;&nbsp;
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary">
+                                <input type="radio" name="agent" value="Yes" autocomplete="off" required data-validation-required-message="Please select whether you have an agent or not"> Yes
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="agent" value="No" autocomplete="off" required data-validation-required-message="Please select whether you have an agent or not"> No
+                            </label>
+                        </div>
                         <p class="help-block"></p>
                     </div>
                     <div class="row">
-                        <div class="g-recaptcha col-sm-3 col-sm-offset-2" data-sitekey="6Leg8CITAAAAAMl9KLLuKNT9TqyJuXq0nz2M21gw"></div>
+                        <div class="g-recaptcha col-sm-3 col-sm-offset-2" data-sitekey="6Leg8CITAAAAAMl9KLLuKNT9TqyJuXq0nz2M21gw" data-validation-callback-callback="validateReCaptcha"></div>
+                        <p class="help-block"></p>
                     </div>
                 </form>
+                <div id="success"></div>
             </div>
             <div class="card-footer text-xs-center">
                 <button id="submitBtn" class="btn btn-success btn-sm" role="button">Submit</button>
@@ -175,8 +193,11 @@ ob_start ();
 }
 #backBtn {
     position: absolute;
-    top: 5.4rem;
+    top: 5rem;
     left: -0.2rem;
+}
+.address-title {
+    margin-top: 1rem;
 }
 .small-img-row {
     margin-left: 2rem;
@@ -269,27 +290,11 @@ function initMap () {
   }
 }
 
-function checkboxValidator ($el, value, callback) {
-    callback ({
-        value: value,
-        valid: /(Yes)|(No)/.test(value),
-        message: "Please select whether you have an agent or not"
-    });
-}
-
 $(document).ready(function() {
     $("#backBtn").tooltip();
     initMap ();
     $("input,select,textarea").not("[type=submit]").jqBootstrapValidation({
         preventSubmit: true
-    });
-    $("#agent").bootstrapSwitch();
-    $("#agent").on('switchChange.bootstrapSwitch', function(event, state) {
-        if (state === true) {
-            $("#agent").val("Yes");
-        } else {
-            $("#agent").val("No");
-        }
     });
 
     // Allow the contact form to be submitted by a button outside of the form
@@ -342,25 +347,11 @@ $(document).ready(function() {
             var content = $.evalJSON(response).content; // Grabs the error log from the returned JSON
 
             if (status === "Success") {
-
-                // Refresh the page
-                //setTimeout(function() { window.location.reload(true); }, 1);
-
-            } else {
-
-                if (status === "Fail User") {
-
-                    alert("Wrong email or password!");
-
-                } else {
-
-                    // Refresh the page
-                    //setTimeout(function () { window.location.reload(true); }, 1);
-
-                }
-
+                // Reset form
+                document.getElementById("contact").reset();
             }
 
+            $("#success").html(content);
         });
 
         // Callback handler that will be called on failure
@@ -377,6 +368,9 @@ $(document).ready(function() {
         // Callback handler that will be called regardless
         // if the request failed or succeeded
         request.always(function () {
+
+            // Reset recaptcha
+            grecaptcha.reset();
 
             // Reenable the inputs
             $inputs.prop("disabled", false);
