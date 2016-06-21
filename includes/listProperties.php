@@ -83,14 +83,14 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 
     // Convert to string for javascript
     $JSi         = "'" . ($i + 1) . "'";
-    $address     = "'" . $address . "'";
+    $JSaddress     = "'" . $address . "'";
 
     ob_start ();
 ?>
 $('#row' + <?=$JSi?>).popover({
-    title: <?=$address?>,
+    title: <?=$JSaddress?>,
     content:
-        '<img class="popover-img" src="../uploads/' + <?=$address?> + '/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true">',
+        '<img class="popover-img" src="../uploads/' + <?=$JSaddress?> + '/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">',
     trigger: 'hover',
     placement: 'top',
     template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',

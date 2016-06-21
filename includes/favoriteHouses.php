@@ -88,7 +88,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 ?>
 <div id="house<?=$i?>" class="card" data-toggle="popover">
     <a href="<?=$link?>">
-        <img id="house<?=$i?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true">
+        <img id="house<?=$i?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">
         <div class="house-info-container">
             <div class="house-price">
                 <?=$priceAmt?>
@@ -106,7 +106,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 <?php for ($j = 1; $j <= $numOfPics; $j++ ) {
 $active = $j == 1 ? " active" : "";
 ?>
-        <img class="popover-image-small<?=$active?>" src="uploads/<?=$address?>/Picture<?=$j?>.jpg" alt="Beautiful Home" onclick="loadIMG('house<?=$i?>IMG', this)" />
+        <img class="popover-image-small<?=$active?>" src="uploads/<?=$address?>/Picture<?=$j?>.jpg" alt="Home Picture <?=$j?> of <?=$address?>" onclick="loadIMG('house<?=$i?>IMG', this)" />
 <?php } ?>
     </div>
 </div>

@@ -76,13 +76,13 @@ ob_start ();
         <div id="map"></div>
     </div>
     <div class="col-md-6">
-        <img id="houseIMG" src="../uploads/<?=$inputAddress?>/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true" />
+        <img id="houseIMG" src="../uploads/<?=$inputAddress?>/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true" />
 <?php for ($i = 0; $i < $numOfPics; $i++ ) {
 $active = $i == 0 ? " active" : "";
 $div = $i % 5 == 0 ? '<div class="small-img-row text-xs-center">' . "\n" : "";
 $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
 ?>
-            <?=$div?><img class="popover-image-small<?=$active?>" src="/uploads/<?=$inputAddress?>/Picture<?=$i + 1?>.jpg" alt="Beautiful Home" onclick="loadIMG('houseIMG', this)" /><?=$closeDiv?>
+            <?=$div?><img class="popover-image-small<?=$active?>" src="/uploads/<?=$inputAddress?>/Picture<?=$i + 1?>.jpg" alt="Home Picture <?=$i + 1?> of <?=$address?>" onclick="loadIMG('houseIMG', this)" /><?=$closeDiv?>
 <?php } ?>
     </div>
     <div class="col-md-6 second-row">
