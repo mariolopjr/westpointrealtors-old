@@ -56,6 +56,7 @@ $numOfPics    = $result [0] [ "num_of_pictures" ]; // Number of Pictures
 $HUDHome      = $result [0] [ "hud_home" ]; // Is this a HUD Home?
 $status       = $result [0] [ "status" ]; // Status
 $description  = $result [0] [ "description" ]; // Description
+$disclaimer   = techmunchies\functions\loadData ( TBL_SETTINGS, "disclaimer" ); // Disclaimer
 
 if ( $HUDHome == 1 ) {
     $HUDCaseNum = $result [0] [ "hud_case_num" ]; // HUD Case Number
@@ -109,6 +110,8 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                 <div class="text-xs-center">
                     <a href="<?=$HUDLink?>" class="btn btn-success btn-sm" role="button" target="_blank">View HUD Listing</a>
                 </div>
+                <br /><br />
+                <div class="text-xs-center"><i><?=$disclaimer?></i></div>
             </div>
         </div>
     </div>
