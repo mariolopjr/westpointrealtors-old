@@ -29,6 +29,9 @@ if ( $result === false ) {
     error_log ( techmunchies\functions\lang ( "SQL_FETCH_ERROR" ) . $dbh->getDBH ()->error );
 }
 
+// Get ready for additional JS by already opening jQuery dom ready function
+$listingJS .= "<script>\n$(document).ready(function() {";
+
 for ($i = 0; $i < $stmt->rowCount(); $i++) {
 
     // Grab Price and transform it
@@ -61,7 +64,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     ob_start ();
 ?>
 
-<tr>
+<tr id="row<?=$i + 1?>">
     <td>
         <a href="<?=$link?>" class="btn btn-success btn-sm" role="button" data-value="View">View</a>
     </td>
@@ -77,24 +80,44 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 <?php
     // Grab the auto-generated listings and save it
     $houseListings .= ob_get_clean ();
-}
-ob_start ();
-?>
-<script>
-$(document).ready(function() {
-    $('.footable').footable();
 
-<?php if ( $query != "" ) { ?>
-    $("#searchField").val("<?=$query?>");
-    $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > input").val("<?=$query?>");
-    $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-primary").click();
-<?php } ?>
-    $("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-default.dropdown-toggle").remove();
+    // Convert to string for javascript
+    $JSi         = "'" . ($i + 1) . "'";
+    $address     = "'" . $address . "'";
+
+    ob_start ();
+?>
+$('#row' + <?=$JSi?>).popover({
+    title: <?=$address?>,
+    content:
+        '<img class="popover-img" src="../uploads/' + <?=$address?> + '/Picture1.jpg" alt="Beautiful Home" data-holder-rendered="true">',
+    trigger: 'hover',
+    placement: 'top',
+    template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',
+    //offset: 15,
+    delay: { show: 350, hide: 100 },
+    html: true
 });
-</script>
 <?php
 // Grab the auto-generated listing JS and save it
 $listingJS .= ob_get_clean ();
+
+}
+ob_start ();
+?>
+$('.footable').footable();
+<?php if ( $query != "" ) { ?>
+$("#searchField").val("<?=$query?>");
+$("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > input").val("<?=$query?>");
+$("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-primary").click();
+<?php } ?>
+$("body > div.container > div > table > thead > tr.footable-filtering > th > form > div > div > div > button.btn.btn-default.dropdown-toggle").remove();
+<?php
+// Grab the auto-generated listing JS and save it
+$listingJS .= ob_get_clean ();
+
+// End generated output
+$listingJS .= "});\n</script>";
 
 ob_start ();
 ?>
@@ -110,6 +133,9 @@ ob_start ();
 }
 .fooicon-remove::before {
     content: "\f00d";
+}
+.popover-img {
+    width: 100%;
 }
 </style>
 <?php
