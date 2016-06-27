@@ -11,7 +11,7 @@
     <footer class="footer">
         <p>Copyright <?=$applicationName?></p>
         <p>
-        <p>Site designed by <a href="http://techmunchies.net">techmunchies - take a byte</a></p>
+        <p class="techmunchies">Site designed by <a href="http://techmunchies.net">techmunchies <img src="/img/techmunchieslogo.png" alt="Site Logo"> take a byte</a></p>
         </p>
     </footer>
 </div>

@@ -4,13 +4,9 @@
 // Software loader, sets up the database connection, and important functions
 require_once dirname ( dirname ( __FILE__ ) ) . "/loader.php";
 
-// Checks to see if user is logged in
-if ( !isset ( $_SESSION [ "accessLevel" ] ) || !$_SESSION [ "accessLevel" ] >= 2 ) {
-    header ( "Location: /403.html" );
-    exit;
-}
+$accessLevel = isset ( $_SESSION [ "accessLevel" ] ) ? 0 : $_SESSION [ "accessLevel" ];
 
-$pageTitle = "$applicationName - Administrator Main";
+$pageTitle = "$applicationName - Administrator";
 ?>
 <!doctype html>
 <head>

@@ -1,3 +1,8 @@
+<?php
+// Grabs the URL stub
+$currentPage = $_SERVER [ "REQUEST_URI" ];
+?>
+
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -27,6 +32,14 @@
 
 <!-- Bootstrap Switch -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+
+<?php if ( stripos ( $currentPage, "/administrator/" ) ) { ?>
+<!-- TinyMCE -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.13/tinymce.min.js"></script>
+
+<!-- TinyMCE jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.13/jquery.tinymce.min.js"></script>
+<?php } ?>
 
 <!-- LazyLoader -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/2.0.0/lazysizes.min.js"></script>
