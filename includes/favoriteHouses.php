@@ -76,6 +76,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     $HOAFees      = "$" . $result [$i] [ "hoa_fees" ]; // HOA Fees
     $numOfPics    = $result [$i] [ "num_of_pictures" ] > 5
         ? 5 : $result [$i] [ "num_of_pictures" ] ; // Number of Pictures
+    $status       = $result [0] [ "status" ]; // Status
 
     $link = $address;
 
@@ -89,6 +90,11 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 <div id="house<?=$i?>" class="card" data-toggle="popover">
     <a href="<?=$link?>">
         <img id="house<?=$i?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">
+        <div class="card-img-overlay">
+            <p class="card-text status-available">
+                <?=$status?>
+            </p>
+        </div>
         <div class="house-info-container">
             <div class="house-price">
                 <?=$priceAmt?>

@@ -108,6 +108,10 @@
     width: 33.333%;
     max-width: 354px;
 }
+.status-available {
+    background-color: #5FB760;
+    color: #fff;
+}
 .fa-small {
     font-size: 0.5rem;
 }
