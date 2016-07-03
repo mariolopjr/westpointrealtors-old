@@ -108,6 +108,10 @@
     width: 33.333%;
     max-width: 354px;
 }
+.status {
+    text-align: center;
+    max-width: 6rem;
+}
 .fa-small {
     font-size: 0.5rem;
 }
