@@ -76,7 +76,29 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     $HOAFees      = "$" . $result [$i] [ "hoa_fees" ]; // HOA Fees
     $numOfPics    = $result [$i] [ "num_of_pictures" ] > 5
         ? 5 : $result [$i] [ "num_of_pictures" ] ; // Number of Pictures
-    $status       = $result [0] [ "status" ]; // Status
+    $status       = $result [$i] [ "status" ]; // Status
+
+    switch ( $status ) {
+        case "Available":
+            $statusColor = "btn-success";
+            break;
+
+        case "Relisted":
+            $statusColor = "btn-primary";
+            break;
+
+        case "Pending":
+            $statusColor = "btn-warning";
+            break;
+
+        case "Sold":
+            $statusColor = "btn-danger";
+            break;
+
+        default:
+            $statusColor = "btn-success";
+            break;
+    }
 
     $link = $address;
 
@@ -91,7 +113,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     <a href="<?=$link?>">
         <img id="house<?=$i?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">
         <div class="card-img-overlay">
-            <p class="card-text status-available">
+            <p class="status card-text <?=$statusColor?>">
                 <?=$status?>
             </p>
         </div>
