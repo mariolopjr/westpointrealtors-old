@@ -24,6 +24,8 @@ $homeActive     = $currentPage == "/" ? $active : "";
 $homeSR         = $currentPage == "/" ? $sr : "";
 $listingsActive = stripos ( $currentPage, "/listings/" ) !== false ? $active : "";
 $listingsSR     = stripos ( $currentPage, "/listings/" ) !== false ? $sr : "";
+$formsActive    = stripos ( $currentPage, "/forms/" )    !== false ? $active : "";
+$formsSR        = stripos ( $currentPage, "/forms/" )    !== false ? $sr : "";
 
 ?>
 
@@ -59,6 +61,9 @@ $listingsSR     = stripos ( $currentPage, "/listings/" ) !== false ? $sr : "";
             </li>
             <li class="nav-item">
                 <a class="nav-link<?=$listingsActive?>" href="/listings/">Listings<?=$listingsSR?></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link<?=$formsActive?>" href="/forms/">Forms<?=$formsSR?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="" data-toggle="collapse" data-target="#contact-header">Contact</a>
