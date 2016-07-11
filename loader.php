@@ -5,8 +5,12 @@ namespace techmunchies;
 ob_start ();
 session_start ();
 
+// Environment Configuration File
+// Values: apache, docker
+$configuration = "apache";
+
 // Load app configuration, functions, and variables
-require_once dirname ( __FILE__ ) . "/configuration.php";
+require_once dirname ( __FILE__ ) . "/configuration.$configuration.php";
 require_once WEB_ROOT . "includes/en.php";
 require_once WEB_ROOT . "includes/functions.php";
 
