@@ -9,27 +9,27 @@ define ( "DEBUG_SET", "TRUE" );
 
 /*
  * SQL Database Type
- * Available Types: MySQL, MSSQL
+ * Available Types: MYSQL, MSSQL
  */
-define ( "DB_TYPE", $_SERVER [ 'MYSQL_TYPE' ] );
+define ( "DB_TYPE", "MYSQL" );
 
 // SQL database name
-define ( "DB_NAME", $_SERVER [ 'MYSQL_DB_NAME' ] );
+define ( "DB_NAME", "iibitsco_wpr" );
 
 // SQL database username
-define ( "DB_USERNAME", $_SERVER [ 'MYSQL_DB_USERNAME' ] );
+define ( "DB_USERNAME", "iibitsco_wpr" );
 
 // SQL database password
-define ( "DB_PASSWORD", $_SERVER [ 'MYSQL_DB_PASSWORD' ] );
+define ( "DB_PASSWORD", 'b)}V[]fKhk0r' );
 
 // SQL hostname
-define ( "DB_HOSTNAME", $_SERVER [ 'MYSQL_DB_HOSTNAME' ] );
+define ( "DB_HOSTNAME", "localhost" );
 
 // SQL port
-define ( "DB_PORT", $_SERVER [ 'MYSQL_DB_PORT' ] );
+define ( "DB_PORT", "3306" );
 
 // SQL charset
-define ( "DB_CHARSET", $_SERVER [ 'MYSQL_DB_CHARSET' ] );
+define ( "DB_CHARSET", "UTF8" );
 
 // SQL collate
 define ( "DB_COLLATE", "" );
