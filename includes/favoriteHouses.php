@@ -112,8 +112,8 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 <div id="house<?=$i?>" class="card" data-toggle="popover">
     <a href="<?=$link?>">
         <img id="house<?=$i?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">
-        <div class="card-img-overlay">
-            <p class="status card-text <?=$statusColor?>">
+        <div class="status">
+            <p class="status-text <?=$statusColor?>">
                 <?=$status?>
             </p>
         </div>
