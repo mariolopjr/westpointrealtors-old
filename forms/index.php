@@ -72,10 +72,10 @@ $query = "";
           </h4>
         </div>
         <div id="formCat2Files" class="panel-collapse collapse" role="tabpanel" aria-labelledby="formCat2">
-            <a href="files/Amendments/Amendments-Amendment-to-Sales-Contract" target="_blank">Sales Contract</a>
-            <a href="files/Amendments/Atlanta-Amendments-Add_Remove-Purchaser1" target="_blank">Add/Remove Purchaser</a>
-            <a href="files/Amendments/Atlanta-Amendments-Change_Finance_Type" target="_blank">Change Finance Type</a>
-            <a href="files/Amendments/Atlanta-Amendments-Corrections-to-Buyer’s-Name_-Address_Style_Status1" target="_blank">Corrections to Buyer’s Name/Address/Style/Status</a>
+            <a href="files/Amendments/Amendments-Amendment-to-Sales-Contract.pdf" target="_blank">Sales Contract</a>
+            <a href="files/Amendments/Atlanta-Amendments-Add_Remove-Purchaser1.pdf" target="_blank">Add/Remove Purchaser</a>
+            <a href="files/Amendments/Atlanta-Amendments-Change_Finance_Type.pdf" target="_blank">Change Finance Type</a>
+            <a href="files/Amendments/Atlanta-Amendments-Corrections-to-Buyer’s-Name_-Address_Style_Status1.pdf" target="_blank">Corrections to Buyer’s Name/Address/Style/Status</a>
         </div>
       </div>
       <div class="panel panel-default">
