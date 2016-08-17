@@ -6,8 +6,8 @@ ob_start ();
 session_start ();
 
 // Environment Configuration File
-// Values: apache, docker
-$configuration = "apache";
+// Values: apache, docker, iis
+$configuration = "iis";
 
 // Load app configuration, functions, and variables
 require_once dirname ( __FILE__ ) . "/configuration.$configuration.php";

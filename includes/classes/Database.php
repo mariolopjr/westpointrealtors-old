@@ -137,17 +137,17 @@ class Database {
     public function establishDBConnection () {
         
         // Sets up standard non-type based DSN
-        $dsn = "host=$this->dbHostname;dbname=$this->dbName;port=$this->dbPort;charset=$this->dbCharset;";
+        $dsn   = "host=$this->dbHostname;dbname=$this->dbName;port=$this->dbPort;charset=$this->dbCharset;";
         
         // Sets PDO connection based upon database type
         switch ( $this->dbType ) {
             case "MYSQL":
-                $dsn = "mysql:$dsn";
+                $dsn   = "mysql:host=$this->dbHostname;dbname=$this->dbName;port=$this->dbPort;charset=$this->dbCharset;";
                 $this->dbh = new \PDO ( $dsn, $this->dbUsername, $this->dbPassword );
                 break;
                 
-            case "MSSQL":
-                $dsn = "mssql:$dsn";
+            case "SQLSRV":
+                $dsn = "sqlsrv:Server=$this->dbHostname;Database=$this->dbName";
                 $this->dbh = new \PDO ( $dsn, $this->dbUsername, $this->dbPassword );
                 break;
             
