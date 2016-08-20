@@ -149,13 +149,13 @@ class Database {
             default:
                 error_log ( lang ( "UNRECOGNIZED_DB_TYPE" ) );
                 break;
+        }
 
-            try {
+        try {
                 $this->dbh = new \PDO ( $dsn, $this->dbUsername, $this->dbPassword );
-            } catch ( \PDOException $exception ) {
-                error_log ( $exception->getMessage( ) );
-                error_log ( $exception->getCode( ) );
-            }
+        } catch ( \PDOException $exception ) {
+            error_log ( $exception->getMessage( ) );
+            error_log ( $exception->getCode( ) );
         }
 
         // Check connection
