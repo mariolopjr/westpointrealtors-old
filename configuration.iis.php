@@ -26,7 +26,7 @@ define ( "DB_PASSWORD", 'root' );
 define ( "DB_HOSTNAME", "localhost" );
 
 // SQL port
-define ( "DB_PORT", "1433" );
+define ( "DB_PORT", "3306" );
 
 // SQL charset
 define ( "DB_CHARSET", "UTF8" );
