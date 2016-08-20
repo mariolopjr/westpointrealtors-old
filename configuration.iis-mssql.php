@@ -11,7 +11,7 @@ define ( "DEBUG_SET", "TRUE" );
  * SQL Database Type
  * Available Types: MYSQL, SQLSRV
  */
-define ( "DB_TYPE", "MYSQL" );
+define ( "DB_TYPE", "SQLSRV" );
 
 // SQL database name
 define ( "DB_NAME", "wpr_1" );
@@ -23,7 +23,7 @@ define ( "DB_USERNAME", "root" );
 define ( "DB_PASSWORD", 'root' );
 
 // SQL hostname
-define ( "DB_HOSTNAME", "localhost" );
+define ( "DB_HOSTNAME", "(local)\SQLEXPRESS" );
 
 // SQL port
 define ( "DB_PORT", "1433" );

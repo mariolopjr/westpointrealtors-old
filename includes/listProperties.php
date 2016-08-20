@@ -14,7 +14,7 @@ $tblProperties = TBL_PROPERTIES;
 // Checks to see if database connection exists
 if ( $dbh->getDBH () === null ) {
     // Returns that the $dbh instance was not instantiated
-    return lang ( "DATABASE_NOT_INITIALIZED" );
+    return techmunchies\functions\lang ( "DATABASE_NOT_INITIALIZED" );
 }
 
 // Fetch the homes

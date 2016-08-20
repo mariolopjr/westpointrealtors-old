@@ -9,7 +9,7 @@ define ( "DEBUG_SET", "TRUE" );
 
 /*
  * SQL Database Type
- * Available Types: MYSQL, MSSQL
+ * Available Types: MYSQL, SQLSRV
  */
 define ( "DB_TYPE", "MYSQL" );
 

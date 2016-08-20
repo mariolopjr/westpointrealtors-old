@@ -9,7 +9,7 @@ define ( "DEBUG_SET", "TRUE" );
 
 /*
  * SQL Database Type
- * Available Types: MySQL, MSSQL
+ * Available Types: MYSQL, SQLSRV
  */
 define ( "DB_TYPE", $_SERVER [ 'MYSQL_TYPE' ] );
 
