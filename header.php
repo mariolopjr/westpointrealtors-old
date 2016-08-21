@@ -34,7 +34,7 @@ $formsSR        = stripos ( $currentPage, "/forms/" )    !== false ? $sr : "";
         <div class="contact-info">
             <h4>Contact Information</h4>
             <p class="text-muted">
-                Mario Lopez<br />
+                Yani Pilar - Office Manager<br />
                 Broker &amp; Real Estate Agent<br />
                 Phone: (352) 462-0414<br />
                 Toll Free: 1 (800) 418-4261<br />
