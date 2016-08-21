@@ -3,35 +3,18 @@
 // Software loader, sets up the database connection, and important functions
 require_once dirname ( dirname ( __FILE__ ) ) . "/loader.php";
 
+// Number of Favorite Homes
+$numOfFavHomes = 12;
+
 // Sets up houses array
 $favoriteHouses = array (
-    "houses" => array (
-        "house1" => array (
-            "html" => "",
-            "js"   => ""
-        ),
-        "house2" => array (
-            "html" => "",
-            "js"   => ""
-        ),
-        "house3" => array (
-            "html" => "",
-            "js"   => ""
-        ),
-        "house4" => array (
-            "html" => "",
-            "js"   => ""
-        ),
-        "house5" => array (
-            "html" => "",
-            "js"   => ""
-        ),
-        "house6" => array (
-            "html" => "",
-            "js"   => ""
-        )
-    )
+    "houses" => array ()
 );
+
+// Initlializes house array
+for ( $i = 0; $i < $numOfFavHomes; $i++ ) {
+
+}
 
 // Properties Table
 $tblProperties = TBL_PROPERTIES;
@@ -54,7 +37,7 @@ if ( $result === false ) {
     error_log ( techmunchies\functions\lang ( "SQL_FETCH_ERROR" ) . $dbh->getDBH ()->error );
 }
 
-for ($i = 0; $i < $stmt->rowCount(); $i++) {
+for ( $i = 0; $i < $stmt->rowCount(); $i++ ) {
 
     // Grab Price and transform it
     $priceAmt = $result [$i] [ "price" ];
@@ -64,19 +47,19 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
         $priceAmt = "$$priceAmt";
     }
 
-    $address      = $result [$i] [ "address" ]; // Address
-    $bedrooms     = $result [$i] [ "bedrooms" ]; // Bedrooms
-    $bathrooms    = $result [$i] [ "bathrooms" ]; // Bathrooms
-    $garages      = $result [$i] [ "garages" ]; // Garages
-    $totalRooms   = $result [$i] [ "total_rooms" ]; // Total Rooms
-    $homeSize     = $result [$i] [ "home_size" ]; // Home Size sq ft
-    $lotSize      = $result [$i] [ "lot_size" ]; // Lot Size sq ft
-    $year         = $result [$i] [ "year" ]; // Year
-    $housingType  = $result [$i] [ "housing_type" ]; // Housing Type
-    $HOAFees      = "$" . $result [$i] [ "hoa_fees" ]; // HOA Fees
-    $numOfPics    = $result [$i] [ "num_of_pictures" ] > 5
-        ? 5 : $result [$i] [ "num_of_pictures" ] ; // Number of Pictures
-    $status       = $result [$i] [ "status" ]; // Status
+    $address      = $result [ $i ] [ "address" ]; // Address
+    $bedrooms     = $result [ $i ] [ "bedrooms" ]; // Bedrooms
+    $bathrooms    = $result [ $i ] [ "bathrooms" ]; // Bathrooms
+    $garages      = $result [ $i ] [ "garages" ]; // Garages
+    $totalRooms   = $result [ $i ] [ "total_rooms" ]; // Total Rooms
+    $homeSize     = $result [ $i ] [ "home_size" ]; // Home Size sq ft
+    $lotSize      = $result [ $i ] [ "lot_size" ]; // Lot Size sq ft
+    $year         = $result [ $i ] [ "year" ]; // Year
+    $housingType  = $result [ $i ] [ "housing_type" ]; // Housing Type
+    $HOAFees      = "$" . $result [ $i ] [ "hoa_fees" ]; // HOA Fees
+    $numOfPics    = $result [ $i ] [ "num_of_pictures" ] > 5
+        ? 5 : $result [ $i ] [ "num_of_pictures" ] ; // Number of Pictures
+    $status       = $result [ $i ] [ "status" ]; // Status
 
     switch ( $status ) {
         case "Available":
@@ -106,12 +89,16 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 
     $link = "/listings?house=$link";
 
+    // Current Home Iteration
+    $currHome = $i;
+    $currHome++;
+
     // Start output buffering to capture auto-generated homes
     ob_start ();
 ?>
-<div id="house<?=$i?>" class="card" data-toggle="popover">
+<div id="house<?=$currHome?>" class="card" data-toggle="popover">
     <a href="<?=$link?>">
-        <img id="house<?=$i?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">
+        <img id="house<?=$currHome?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">
         <div class="status">
             <p class="status-text <?=$statusColor?>">
                 <?=$status?>
@@ -140,13 +127,14 @@ $active = $j == 1 ? " active" : "";
 </div>
 <?php
 // Grab the first favorite home, and save it to return variable
-$favoriteHouses [ "houses" ] [ "house$i" ] ["html"] = ob_get_clean ();
+$favoriteHouses [ "houses" ] [ "house" . $currHome ] = array ( "html" => "", "js" => "" );
+$favoriteHouses [ "houses" ] [ "house" . $currHome ] ["html"] = ob_get_clean ();
 
 // Start output buffering to capture auto-generated homes
 ob_start ();
 
 // Convert to string for javascript
-$JSi         = "'" . $i . "'";
+$JSi         = "'" . $currHome . "'";
 $address     = "'" . $address . "'";
 $priceAmt    = "'" . $priceAmt . "'";
 $bedrooms    = "'" . $bedrooms . "'";
@@ -186,6 +174,6 @@ $('#house' + <?=$JSi?>).popover({
 });
 <?php
     // Grab the first favorite home, and save it to return variable
-    $favoriteHouses [ "houses" ] [ "house$i" ] ["js"] = ob_get_clean ();
+    $favoriteHouses [ "houses" ] [ "house" . $currHome ] ["js"] = ob_get_clean ();
 }
 ?>
