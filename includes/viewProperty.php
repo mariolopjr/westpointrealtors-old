@@ -76,7 +76,11 @@ ob_start ();
         <div id="map"></div>
     </div>
     <div class="col-md-6">
+        <?php if ( $numOfPics == 0 ) { ?>
+        <img id="houseIMG" data-src="holder.js/540x540?text=No Images Available" alt="There are no pictures of <?=$inputAddress?>" data-holder-rendered="true" />
+        <?php } else { ?>
         <img id="houseIMG" src="../uploads/<?=$inputAddress?>/Picture1.jpg" alt="Main Home Picture of <?=$inputAddress?>" data-holder-rendered="true" />
+        <?php } ?>
 <?php for ($i = 0; $i < $numOfPics; $i++ ) {
 $active = $i == 0 ? " active" : "";
 $div = $i % 5 == 0 ? '<div class="small-img-row text-xs-center">' . "\n" : "";
@@ -107,9 +111,11 @@ $closeDiv = ($i + 1) % 5 == 0 || $i == $numOfPics - 1 ? "\n</div>" : "";
                     <?=$description?>
                     <?php } ?>
                 </p>
+                <?php if ( $HUDHome == 1 ) { // Only show HUD link if homes is a HUD home ?>
                 <div class="text-xs-center">
                     <a href="<?=$HUDLink?>" class="btn btn-success btn-sm" role="button" target="_blank">View HUD Listing</a>
                 </div>
+                <?php } ?>
                 <br /><br />
                 <div class="text-xs-center"><i><?=$disclaimer?></i></div>
             </div>

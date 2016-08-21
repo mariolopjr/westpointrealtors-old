@@ -98,7 +98,11 @@ for ( $i = 0; $i < $stmt->rowCount(); $i++ ) {
 ?>
 <div id="house<?=$currHome?>" class="card" data-toggle="popover">
     <a href="<?=$link?>">
+        <?php if ( $numOfPics == 0 ) { ?>
+        <img id="house<?=$currHome?>IMG" data-src="holder.js/354x280?text=No Images Available" alt="There are no pictures of <?=$address?>" data-holder-rendered="true">
+        <?php } else { ?>
         <img id="house<?=$currHome?>IMG" src="uploads/<?=$address?>/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">
+        <?php } ?>
         <div class="status">
             <p class="status-text <?=$statusColor?>">
                 <?=$status?>

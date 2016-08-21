@@ -53,6 +53,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     $housingType  = $result [$i] [ "housing_type" ]; // Housing Type
     $HOAFees      = "$" . $result [$i] [ "hoa_fees" ]; // HOA Fees
     $listDate     = $result [$i] [ "list_date" ]; // List Date
+    $numOfPics    = $result [ $i ] [ "num_of_pictures" ]; // Number of Pictures
 
     $link = $address;
 
@@ -90,7 +91,11 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
 $('#row' + <?=$JSi?>).popover({
     title: <?=$JSaddress?>,
     content:
+        <?php if ( $numOfPics == 0 ) { ?>
+        '<img class="popover-img" data-src="holder.js/354x280?text=No Images Available" alt="There are no pictures of <?=$address?>" data-holder-rendered="true">',
+        <?php } else { ?>
         '<img class="popover-img" src="../uploads/' + <?=$JSaddress?> + '/Picture1.jpg" alt="Main Home Picture of <?=$address?>" data-holder-rendered="true">',
+        <?php } ?>
     trigger: 'hover',
     placement: 'top',
     template: '<div class="popover popover-card" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title text-xs-center"></h3><div class="popover-content"></div></div>',

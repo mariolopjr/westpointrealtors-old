@@ -33,6 +33,11 @@ $currentPage = $_SERVER [ "REQUEST_URI" ];
 <!-- Bootstrap Switch -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
 
+<?php if ( stripos ( $currentPage, "/" ) && stripos ( $currentPage, "/listings/" ) ) { ?>
+<!-- Holder -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.3/holder.min.js"></script>
+<?php } ?>
+
 <?php if ( stripos ( $currentPage, "/administrator/" ) ) { ?>
 <!-- TinyMCE -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.13/tinymce.min.js"></script>
