@@ -19,6 +19,14 @@ require_once WEB_ROOT . "includes/favoriteHouses.php";
 <?php require_once WEB_ROOT . "includes/css.php"; ?>
 <!-- /Site CSS -->
 
+<!-- Inline Style  -->
+<style>
+.hr-none {
+    border-top: none;
+}
+</style>
+<!-- /Inline Style -->
+
 </head>
 <body>
 

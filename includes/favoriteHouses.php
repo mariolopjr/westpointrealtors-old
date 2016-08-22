@@ -125,7 +125,7 @@ for ( $i = 0; $i < $stmt->rowCount(); $i++ ) {
 <?php for ($j = 1; $j <= $numOfPics; $j++ ) {
 $active = $j == 1 ? " active" : "";
 ?>
-        <img class="popover-image-small<?=$active?>" src="uploads/<?=$address?>/Picture<?=$j?>.jpg" alt="Home Picture <?=$j?> of <?=$address?>" onclick="loadIMG('house<?=$currHome?>IMG', this)" />
+        <img class="popover-image-small<?=$active?>" src="uploads/<?=$address?>/Picture<?=$j?>.jpg" alt="Home Picture <?=$j?> of <?=$address?>" onclick="loadIMG('house<?=$i?>IMG', this)" />
 <?php } ?>
     </div>
 </div>
@@ -179,5 +179,25 @@ $('#house' + <?=$JSi?>).popover({
 <?php
     // Grab the first favorite home, and save it to return variable
     $favoriteHouses [ "houses" ] [ "house" . $currHome ] ["js"] = ob_get_clean ();
+}
+
+// Checks to see if the amount of favorite homes is not divisible by 3
+// If so, add fillers to make styling look good
+while ( count ( $favoriteHouses [ "houses" ] ) % 3 != 0 ) {
+    $currHome = count ( $favoriteHouses [ "houses" ] ) + 1;
+    // Start output buffering to capture auto-generated homes
+    ob_start ();
+?>
+<div id="house<?=$currHome?>" class="card" data-toggle="popover">
+    <img id="house<?=$currHome?>IMG" data-src="holder.js/354x280?bg=fff&fg=fff&text=none" data-holder-rendered="true">
+    <hr class="hr-none">
+    <div class="small-img-row text-xs-center">
+    </div>
+</div>
+<?php
+    // Grab the first favorite home, and save it to return variable
+    $favoriteHouses [ "houses" ] [ "house" . $currHome ] = array ( "html" => "", "js" => "" );
+    $favoriteHouses [ "houses" ] [ "house" . $currHome ] ["html"] = ob_get_clean ();
+    $favoriteHouses [ "houses" ] [ "house" . $currHome ] ["js"] = "";
 }
 ?>
