@@ -40,12 +40,9 @@ require_once WEB_ROOT . "includes/favoriteHouses.php";
 <!-- Favorite Listings  -->
 <div class="album text-muted">
     <div class="row">
-        <?=$favoriteHouses ["houses"] [ "house1" ] ["html"]?>
-        <?=$favoriteHouses ["houses"] [ "house2" ] ["html"]?>
-        <?=$favoriteHouses ["houses"] [ "house3" ] ["html"]?>
-        <?=$favoriteHouses ["houses"] [ "house4" ] ["html"]?>
-        <?=$favoriteHouses ["houses"] [ "house5" ] ["html"]?>
-        <?=$favoriteHouses ["houses"] [ "house6" ] ["html"]?>
+        <?php for ( $i = 1; $i <= count ( $favoriteHouses ["houses"] ); $i++ ) {
+            echo $favoriteHouses ["houses"] [ "house$i" ] ["html"];
+        } ?>
     </div>
 </div>
 <!-- /Favorite Listings -->
@@ -59,12 +56,9 @@ require_once WEB_ROOT . "includes/favoriteHouses.php";
 
 <script>
 $(document).ready(function() {
-    <?=$favoriteHouses ["houses"] [ "house1" ] ["js"]?>
-    <?=$favoriteHouses ["houses"] [ "house2" ] ["js"]?>
-    <?=$favoriteHouses ["houses"] [ "house3" ] ["js"]?>
-    <?=$favoriteHouses ["houses"] [ "house4" ] ["js"]?>
-    <?=$favoriteHouses ["houses"] [ "house5" ] ["js"]?>
-    <?=$favoriteHouses ["houses"] [ "house6" ] ["js"]?>
+    <?php for ( $i = 1; $i <= count ( $favoriteHouses ["houses"] ); $i++ ) {
+            echo $favoriteHouses ["houses"] [ "house$i" ] ["js"];
+    } ?>
 });
 </script>
 </body>
