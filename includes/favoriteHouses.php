@@ -125,7 +125,7 @@ for ( $i = 0; $i < $stmt->rowCount(); $i++ ) {
 <?php for ($j = 1; $j <= $numOfPics; $j++ ) {
 $active = $j == 1 ? " active" : "";
 ?>
-        <img class="popover-image-small<?=$active?>" src="uploads/<?=$address?>/Picture<?=$j?>.jpg" alt="Home Picture <?=$j?> of <?=$address?>" onclick="loadIMG('house<?=$i?>IMG', this)" />
+        <img class="popover-image-small<?=$active?>" src="uploads/<?=$address?>/Picture<?=$j?>.jpg" alt="Home Picture <?=$j?> of <?=$address?>" onclick="loadIMG('house<?=$currHome?>IMG', this)" />
 <?php } ?>
     </div>
 </div>
